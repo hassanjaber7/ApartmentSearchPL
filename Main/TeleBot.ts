@@ -35,7 +35,7 @@ function formatListingsForTelegram(listings: any[]) {
   const displayListings = listings.slice(0, maxListings);
   
   // Build the message string
-  let message = '🚙 *Latest Apartments and Rooms Listings*\n\n';
+  let message = '🏢 *Latest Apartments and Rooms Listings*\n\n';
   message += `* Number of Listings found: ${listings.length}*\n`;
   message += '═'.repeat(29) + '\n\n';
   

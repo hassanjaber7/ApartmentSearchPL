@@ -6,3 +6,8 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+#Dont commit env files
+.env
+.env.local
+.env.*.local
