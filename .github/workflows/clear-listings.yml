@@ -1,0 +1,43 @@
+# This workflow clears the listings.json file daily at midnight and pushes the changes to the repository. It also allows for manual triggering for testing purposes.
+name: Clear Listings Daily
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight (00:00) every day
+  workflow_dispatch:  # Manual trigger for testing
+
+jobs:
+  clear:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    
+    # Inject GitHub Secrets (needed if you want to send notification)
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
+    
+    permissions:
+      contents: write  # Required to push changes
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Clear listings.json
+      run: |
+        echo '[]' > listings.json
+        echo "Cleared listings.json at $(date)"
+        echo "File size: $(wc -c < listings.json) bytes"
+    
+    - name: Commit and push cleared file
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add listings.json
+        
+        # Check if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit (file already empty)"
+        else
+          git commit -m "Clear listings.json [skip ci]"
+          git push
+          echo "listings.json cleared and pushed"
+        fi
