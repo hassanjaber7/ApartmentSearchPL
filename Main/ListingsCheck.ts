@@ -21,6 +21,8 @@ export async function listingExists(existingListings: any[], newListing: { title
     listing.locationDate === newListing.locationDate
   );
 }
+
+// Function to check if listing already exists based on title only (between OLX and Otodom)
 export async function CheckingListingsOlxOto(existingListings: any[], newListing: { title: any;}) {
   return existingListings.some(listing => 
     listing.title === newListing.title
