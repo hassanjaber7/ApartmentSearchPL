@@ -21,3 +21,8 @@ export async function listingExists(existingListings: any[], newListing: { title
     listing.locationDate === newListing.locationDate
   );
 }
+export async function CheckingListingsOlxOto(existingListings: any[], newListing: { title: any;}) {
+  return existingListings.some(listing => 
+    listing.title === newListing.title
+  );
+}

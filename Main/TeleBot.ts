@@ -31,7 +31,7 @@ function formatListingsForTelegram(listings: any[]) {
   }
 
   // Limit to prevent message too long error (Telegram has 4096 char limit)
-  const maxListings = 15;
+  const maxListings = 20;
   const displayListings = listings.slice(0, maxListings);
   
   // Build the message string
@@ -40,9 +40,24 @@ function formatListingsForTelegram(listings: any[]) {
   message += '═'.repeat(29) + '\n\n';
   
   displayListings.forEach((listing, index) => {
-    message += `*${index + 1}. ${listing.title || 'No title'}*\n`;
+    
+    if(listing.locationDate.toLowerCase().includes('dzisiaj')){
+      message +=  `*${index + 1}. ${'(OLX) '}*`;
+    }
+    else{
+      message += `*${index + 1}. ${'(Otodom) '}*`;
+    }
+
+    message += `*${listing.title || 'No title'}*\n`;
     message += `💰 *Price:* ${listing.price || 'N/A'}\n`;
-    message += `📍 *Location and Date:* ${listing.locationDate || 'N/A'}\n`;
+    if(listing.locationDate.toLowerCase().includes('dzisiaj'))
+      {
+        message += `📍 *Location:* ${listing.locationDate.split(' - ')[0] || 'N/A'}\n`;
+      }
+      else{
+          message += `📍 *Location:* ${listing.locationDate || 'N/A'}\n`;
+      }
+    
     message += `🔗 [View Link](${listing.link || '#'})\n\n`;
   });
   
