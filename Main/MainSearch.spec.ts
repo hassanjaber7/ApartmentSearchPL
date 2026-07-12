@@ -4,7 +4,7 @@ import { sendListingsToTelegram } from './TeleBot';
 import { loadExistingListings, listingExists,CheckingListingsOlxOto } from './ListingsCheck';
 test('Searching for apartments in Warsaw', async ({ page }) => {
 
-  test.setTimeout(240000);// Set timeout to 4 minutes for this test
+  test.setTimeout(600000);// Set timeout to 10 minutes for this test
   const listingData = []; // Array to store the listing data to push it later to a JSON file
     
   // Load existing listings
