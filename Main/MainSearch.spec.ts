@@ -43,6 +43,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     if (await listingExists(existingListings, listingKey)) {
       continue;
     }
+    
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
     // Push the new listing data to the array
@@ -85,7 +86,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       locationDate: locationDateRoom?.trim() ?? ''
     };
    // Check if the listing already exists in the existing listings
-    if (await listingExists(existingListings, listingKey)) {
+    if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
     // Check if the listing is posted today and push it to the array
@@ -229,15 +230,19 @@ const CookiesPopupRoomsOto = await page.getByRole('button', { name: 'Akceptuj ws
       price: priceRoomsOto?.trim() ?? '',
       locationDate: locationRoomsOto?.trim() ?? ''
     };
-   // Check if the Otodom listing already exists in the existing listings in comparison to other Otodom listings
-    if (await listingExists(existingListings, listingKey)) {
+   
+    
+    if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
+
+
 
     // Create a unique key for the listing to check for duplicates between Otodom listings and olx listings
     const listingKeyOlxOto = {
       title: titleRoomsOto?.trim() ?? ''
     };
+
 // Check if the Otodom listing already exists in the existing listings as OLX listing
     if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
       continue;
