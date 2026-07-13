@@ -39,20 +39,24 @@ function formatListingsForTelegram(listings: any[]) {
   message += `* Number of Listings found: ${listings.length}*\n`;
   message += '═'.repeat(29) + '\n\n';
   
-  displayListings.forEach((listing, index) => {
+  displayListings.forEach(async (listing, index) => {
     
     if(listing.locationDate.toLowerCase().includes('dzisiaj')){
       message +=  `*${index + 1}. ${'(OLX) '}*`;
-      message += `💰 *Price:* ${listing.price || 'N/A'}\n`;
+      
     }
     else{
       message += `*${index + 1}. ${'(Otodom) '}*`;
-      const totalPrice = CalculateTotalPrice(listing.Price);
-      message += `💰 *Price:* ${totalPrice || 'N/A'} *zł*\n`;
     }
 
-    message += `*${listing.title || 'No title'}*\n`;
-
+    if (listing.title.toLowerCase().includes('*')){
+      const newTitle = listing.title.replace(/\*/g, '');
+    message += `*${newTitle || 'No title'}*\n`;
+    }
+    else{
+      message += `*${listing.title || 'No title'}*\n`;
+    }
+    message += `💰 *Price:* ${listing.price || 'N/A'}\n`;
     
     
     
