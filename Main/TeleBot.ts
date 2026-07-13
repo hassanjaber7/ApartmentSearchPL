@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 import dotenv from 'dotenv';
-
+import { CalculateTotalPrice } from './Functions';
 
 dotenv.config();
 
@@ -43,13 +43,19 @@ function formatListingsForTelegram(listings: any[]) {
     
     if(listing.locationDate.toLowerCase().includes('dzisiaj')){
       message +=  `*${index + 1}. ${'(OLX) '}*`;
+      message += `💰 *Price:* ${listing.price || 'N/A'}\n`;
     }
     else{
       message += `*${index + 1}. ${'(Otodom) '}*`;
+      const totalPrice = CalculateTotalPrice(listing.Price);
+      message += `💰 *Price:* ${totalPrice || 'N/A'} *zł*\n`;
     }
 
     message += `*${listing.title || 'No title'}*\n`;
-    message += `💰 *Price:* ${listing.price || 'N/A'}\n`;
+
+    
+    
+    
     if(listing.locationDate.toLowerCase().includes('dzisiaj'))
       {
         message += `📍 *Location:* ${listing.locationDate.split(' - ')[0] || 'N/A'}\n`;
