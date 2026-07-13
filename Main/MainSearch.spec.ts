@@ -6,6 +6,8 @@ import { CalculateTotalPrice, handleCookieConsent, buildFullLink, createListingK
 test('Searching for apartments in Warsaw', async ({ page }) => {
 
   test.setTimeout(600000);// Set timeout to 10 minutes for this test
+
+  // explicitly defining listingData
   const listingData: {
   title: string;
   price: string;
