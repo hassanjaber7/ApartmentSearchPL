@@ -1,7 +1,6 @@
 
 import fs from 'fs';
 import dotenv from 'dotenv';
-import { CalculateTotalPrice } from './Functions';
 
 dotenv.config();
 
