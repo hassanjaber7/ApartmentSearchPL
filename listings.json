@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Wynajem mieszkania",
+    "price": "1 900 zł",
+    "locationDate": "Żyrardów - Dzisiaj o 04:20",
+    "link": "https://www.olx.pl//d/oferta/wynajem-mieszkania-CID3-ID1brFTU.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Mieszkanie na wynajem ursus 1 maja 8",
+    "price": "2 100 zł",
+    "locationDate": "Warszawa, Ursus - Dzisiaj o 03:57",
+    "link": "https://www.olx.pl//d/oferta/mieszkanie-na-wynajem-ursus-1-maja-8-CID3-ID1brFMN.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokoje na wynajem w nowym bloku",
+    "price": "1 200 zł",
+    "locationDate": "Błonie - Odświeżono dzisiaj o 00:21",
+    "link": "https://www.olx.pl//d/oferta/pokoje-na-wynajem-w-nowym-bloku-CID3-ID1bgOVp.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Stary Żoliborz, suterena - dość niski standard, dobra lokalizacja",
+    "price": "1600 zł+ czynsz: 350 zł/miesiąc",
+    "locationDate": "ul. Ludwika Mierosławskiego, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/stary-zoliborz-suterena-dosc-niski-standard-dobra-lokalizacja-ID4Cc8C"
+  },
+  {
+    "title": "Ochota,atrakcyjna lokalizacja 1 pokój do wynajęcia",
+    "price": "1600 zł+ czynsz: 350 zł/miesiąc",
+    "locationDate": "ul. Jana III Sobieskiego, Sadyba, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/do-wynajecia-pokoj-16-m2-z-klimatyzacja-ul-sobieskiego-60-ID4C3cn"
+  },
+  {
+    "title": "Pokój na wynajem w Wesołej, 1500 PLN",
+    "price": "1500 zł+ czynsz: 0 zł/miesiąc",
+    "locationDate": "Zielona-Grzybowa, Wesoła, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-na-wynajem-w-wesolej-1500-pln-ID4BVBK"
+  },
+  {
+    "title": "Pokoje dla studentów",
+    "price": "1700 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Radiowa, Boernerowo, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoje-dla-studentow-ID4xXPV"
+  }
+]
