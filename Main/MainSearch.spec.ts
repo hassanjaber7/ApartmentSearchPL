@@ -34,16 +34,30 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const price = await listing.locator('[data-testid="ad-price"]').textContent();
     const locationDate = await listing.locator('[data-testid="location-date"]').textContent();
     const link = await listing.locator('[data-testid="card-title-link"]').getAttribute('href');
-
-
-    const fullLink = buildFullLink('https://www.olx.pl/',link);
-
+    let fullLink;
+    
+    //check if it is already an otodom link inside the OLX listing
+    if(link?.includes("otodom")){
+      fullLink = link;
+    }
+    else{
+    fullLink = buildFullLink('https://www.olx.pl/',link);
+    }
 
     // Create a unique key for the listing to check for duplicates
     const listingKey = createListingKey(title, price, locationDate);
     
    // Check if the listing already exists in the existing listings
     if (await listingExists(existingListings, listingKey)) {
+      continue;
+    }
+
+     // Create a unique key for the listing to check for duplicates between Otodom listings and olx listings
+    const listingKeyOlxOto = {
+      title: title?.trim() ?? ''
+    };
+    // Check if the Otodom listing already exists in the existing listings as OLX listing
+    if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
       continue;
     }
     
@@ -72,7 +86,15 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const locationDateRoom = await listingRoom.locator('[data-testid="location-date"]').textContent();
     const linkRoom = await listingRoom.locator('[data-testid="card-title-link"]').getAttribute('href');
 
-    const fullLinkRoom = buildFullLink('https://www.olx.pl/',linkRoom);
+    let fullLinkRoom;
+    
+    //check if it is already an otodom link inside the OLX listing
+    if(linkRoom?.includes("otodom")){
+      fullLinkRoom = linkRoom;
+    }
+    else{
+    fullLinkRoom = buildFullLink('https://www.olx.pl/',linkRoom);
+    }
     // Create a unique key for the listing to check for duplicates
     const listingKey = createListingKey(titleRoom, priceRoom, locationDateRoom);
    
@@ -140,7 +162,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       title: titleApartmentsOto?.trim() ?? ''
     };
 // Check if the Otodom listing already exists in the existing listings as OLX listing
-    if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
+    if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto) || await CheckingListingsOlxOto(listingData, listingKeyOlxOto)) {
       continue;
     }
      
@@ -205,7 +227,7 @@ await handleCookieConsent(page);
     };
 
 // Check if the Otodom listing already exists in the existing listings as OLX listing
-    if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
+    if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto) || await CheckingListingsOlxOto(listingData, listingKeyOlxOto)) {
       continue;
     }
 
