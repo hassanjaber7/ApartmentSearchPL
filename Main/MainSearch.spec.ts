@@ -38,7 +38,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     
     //check if it is already an otodom link inside the OLX listing
     if(link?.includes("otodom")){
-      fullLink = link;
+      continue;
     }
     else{
     fullLink = buildFullLink('https://www.olx.pl/',link);
@@ -90,7 +90,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     
     //check if it is already an otodom link inside the OLX listing
     if(linkRoom?.includes("otodom")){
-      fullLinkRoom = linkRoom;
+      continue;
     }
     else{
     fullLinkRoom = buildFullLink('https://www.olx.pl/',linkRoom);
@@ -144,7 +144,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     // Extract numbers from the price string and calculate the total price
 
     totalPrice = CalculateTotalPrice(priceApartmentsOto ?? '');
-    console.log(totalPrice);
+    
    
     const fullLinkApartmentsOto = buildFullLink('https://www.otodom.pl/',linkApartmentsOto);
   
