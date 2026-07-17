@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "duży pokój 5 min od metra Bemowo - mieszkanie 2 pokojowe",
+    "price": "1 600 zł",
+    "locationDate": "Warszawa, Bemowo - Odświeżono dzisiaj o 04:17",
+    "link": "https://www.olx.pl//d/oferta/duzy-pokoj-5-min-od-metra-bemowo-mieszkanie-2-pokojowe-CID3-ID19Xj3b.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój, Warszawa, ul. Aleksandra Gierymskiego",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Gierymskiego, Sielce, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-warszawa-ul-aleksandra-gierymskiego-ID4CeTJ"
+  },
+  {
+    "title": "Pokój, Warszawa, ul. Jana Kochanowskiego",
+    "price": "1950 zł",
+    "locationDate": "ul. Jana Kochanowskiego, Piaski, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-warszawa-ul-jana-kochanowskiego-ID4CbJF"
+  },
+  {
+    "title": "Quiet room Warsaw center / metro ONZ / DIRECTLY from owner",
+    "price": "1550 zł+ czynsz: 450 zł/miesiąc",
+    "locationDate": "ul. Waliców, Mirów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/quiet-room-warsaw-center-metro-onz-directly-from-owner-ID4CbrO"
+  }
+]
