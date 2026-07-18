@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój, Warszawa, ul. Aleksandra Gierymskiego",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Gierymskiego, Sielce, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-warszawa-ul-aleksandra-gierymskiego-ID4CeTJ"
+  },
+  {
+    "title": "WUM, Bitwy Warszawskiej 1920 r. nr 18",
+    "price": "1620 zł162 zł/m²",
+    "locationDate": "ul. Bitwy Warszawskiej 1920 r., Stara Ochota, Ochota, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/wum-bitwy-warszawskiej-1920-r-nr-18-ID4tRHj"
+  },
+  {
+    "title": "Praga Południe pokój bezpośrednio blisko Promenady",
+    "price": "1100 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Szkoły Orląt, Gocław, Praga-Południe, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/praga-poludnie-pokoj-bezposrednio-blisko-promenady-ID4bEao"
+  }
+]
