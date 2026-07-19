@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "title": "Studio w suterenie dla pracującego singla 2200 ALL-IN",
+    "price": "1949 zł+ czynsz: 249 zł/miesiąc",
+    "locationDate": "ul. Łamana, Stare Włochy, Włochy, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/studio-w-suterenie-dla-pracujacego-singla-2200-all-in-ID4CgeA"
+  },
+  {
+    "title": "Pokój, Warszawa, ul. Aleksandra Gierymskiego",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Gierymskiego, Sielce, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-warszawa-ul-aleksandra-gierymskiego-ID4CeTJ"
+  },
+  {
+    "title": "Śliczny POKÓJ z balkonem - 3 min do PKP ! 14 min Centrum ! ASzWoj",
+    "price": "1190 zł",
+    "locationDate": "ul. Kuglarska, Nowy Rembertów, Rembertów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/sliczny-pokoj-z-balkonem-3-min-do-pkp-14-min-centrum-aszwoj-ID4C28K"
+  },
+  {
+    "title": "WUM, Bitwy Warszawskiej 1920 r. nr 18",
+    "price": "1620 zł162 zł/m²",
+    "locationDate": "ul. Bitwy Warszawskiej 1920 r., Stara Ochota, Ochota, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/wum-bitwy-warszawskiej-1920-r-nr-18-ID4tRHj"
+  },
+  {
+    "title": "Pokoje na Wolskiej 15 Super Lokalizacja Metro",
+    "price": "1550 zł+ czynsz: 200 zł/miesiąc",
+    "locationDate": "Wolska 15, Ulrychów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoje-na-wolskiej-15-super-lokalizacja-metro-ID4CgnP"
+  }
+]
