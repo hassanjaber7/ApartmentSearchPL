@@ -60,10 +60,22 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
       continue;
     }
-    
+   
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
+    // await listing.getByRole('link').nth(0).click();
+    // // ✅ Wait for all network connections to finish
+    // await page.waitForLoadState('load');
+    // // Accept cookies if the popup appears
+    // await handleCookieConsent(page);
+
+
+    // await page.goBack();
+    // // ✅ Wait for all network connections to finish
+    // await page.waitForLoadState('load');
+    // // Accept cookies if the popup appears
+    // await handleCookieConsent(page);
     // Push the new listing data to the array
     pushListing(title,price,locationDate,fullLink,listingData);
   }
