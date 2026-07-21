@@ -45,16 +45,14 @@ export function buildFullLink(baseLink: string, link: string | null){
 export function createListingKey(
   title: string | null | undefined,
   price: string | null | undefined,
-  locationDate: string | null | undefined
 ): {
   title: string;
   price: string;
-  locationDate: string;
+  
 } {
   return {
     title: title?.trim() ?? '',
     price: price?.trim() ?? '',
-    locationDate: locationDate?.trim() ?? ''
   };
 }
 

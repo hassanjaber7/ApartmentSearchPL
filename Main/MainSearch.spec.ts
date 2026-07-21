@@ -45,7 +45,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     }
 
     // Create a unique key for the listing to check for duplicates
-    const listingKey = createListingKey(title, price, locationDate);
+    const listingKey = createListingKey(title, price);
     
    // Check if the listing already exists in the existing listings
     if (await listingExists(existingListings, listingKey)) {
@@ -96,7 +96,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     fullLinkRoom = buildFullLink('https://www.olx.pl/',linkRoom);
     }
     // Create a unique key for the listing to check for duplicates
-    const listingKey = createListingKey(titleRoom, priceRoom, locationDateRoom);
+    const listingKey = createListingKey(titleRoom, priceRoom);
    
    // Check if the listing already exists in the existing listings
     if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
@@ -150,7 +150,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   
     // Create a unique key for the listing to check for duplicates between Otodom listings
     
-    const listingKey = createListingKey(titleApartmentsOto, priceApartmentsOto, locationApartmentsOto);
+    const listingKey = createListingKey(titleApartmentsOto, priceApartmentsOto);
     
    // Check if the Otodom listing already exists in the existing listings in comparison to other Otodom listings
     if (await listingExists(existingListings, listingKey)) {
@@ -215,7 +215,7 @@ await handleCookieConsent(page);
     const fullLinkRoomsOto = buildFullLink('https://www.otodom.pl/', linkRoomsOto);
 
     // Create a unique key for the listing to check for duplicates between Otodom listings
-    const listingKey = createListingKey(titleRoomsOto, priceRoomsOto, locationRoomsOto);
+    const listingKey = createListingKey(titleRoomsOto, priceRoomsOto);
     
     if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;

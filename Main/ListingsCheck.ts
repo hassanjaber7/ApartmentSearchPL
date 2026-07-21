@@ -14,11 +14,10 @@ export async function loadExistingListings(filename = 'listings.json') {
 }
 
 //  Function to check if listing already exists
-export async function listingExists(existingListings: any[], newListing: { title: any; price: any; locationDate: any; }) {
+export async function listingExists(existingListings: any[], newListing: { title: any; price: any;}) {
   return existingListings.some(listing => 
     listing.title === newListing.title &&
-    listing.price === newListing.price &&
-    listing.locationDate === newListing.locationDate
+    listing.price === newListing.price 
   );
 }
 
