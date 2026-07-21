@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój Westfield Mokotów Metro UW WZ SGGW Łazarski",
+    "price": "1400 zł",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-westfield-mokotow-metro-uw-wz-sggw-lazarski-ID4Ci5c"
+  },
+  {
+    "title": "Czyste, przytulne 1-os pokoje 9m2 i 12m2 Bemowo blisko WAT i S8",
+    "price": "1150 zł",
+    "locationDate": "ul. Iskry, Groty, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/czyste-przytulne-1-os-pokoje-9m2-i-12m2-bemowo-blisko-wat-i-s8-ID4y8xR"
+  },
+  {
+    "title": "Duży pokój dla studentki na Żoliborzu, park, ochrona,",
+    "price": "1600 zł84,21 zł/m²",
+    "locationDate": "ul. Potocka, Marymont-Potok, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/duzy-pokoj-dla-studentki-na-zoliborzu-park-ochrona-ID4tcW5"
+  }
+]
