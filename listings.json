@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokoje na Wolskiej 15 Super Lokalizacja Metro",
+    "price": "1550 zł+ czynsz: 200 zł/miesiąc",
+    "locationDate": "Wolska 15, Ulrychów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoje-na-wolskiej-15-super-lokalizacja-metro-ID4CgnP"
+  },
+  {
+    "title": "Pokój 1-osobowy Warszawa przy metro Stokłosy",
+    "price": "1300 zł+ czynsz: 350 zł/miesiąc",
+    "locationDate": "ul. Dzwonnicza, Ursynów Północny, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-1-osobowy-warszawa-przy-metro-stoklosy-ID4fQe3"
+  },
+  {
+    "title": "pokój w kamienicy blisko pl. Zbawiciela, bezpośrednio",
+    "price": "1550 zł+ czynsz: 360 zł/miesiąc",
+    "locationDate": "ul. Marszałkowska, Śródmieście Południowe, Śródmieście, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-w-kamienicy-blisko-pl-zbawiciela-bezposrednio-ID4dfuH"
+  }
+]
