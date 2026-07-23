@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Studio w suterenie dla pracującego singla 2200 ALL-IN",
+    "price": "1949 zł+ czynsz: 249 zł/miesiąc",
+    "locationDate": "ul. Łamana, Stare Włochy, Włochy, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/studio-w-suterenie-dla-pracujacego-singla-2200-all-in-ID4CgeA"
+  },
+  {
+    "title": "Pokój Westfield Mokotów Metro UW WZ SGGW Łazarski",
+    "price": "1400 zł+ czynsz: 399 zł/miesiąc",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-westfield-mokotow-metro-uw-wz-sggw-lazarski-ID4Ci5c"
+  },
+  {
+    "title": "Puławska [w cenie siłownia,sauna,recepcja,bilard]",
+    "price": "1750 zł+ czynsz: 250 zł/miesiąc",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pulawska-w-cenie-silownia-sauna-recepcja-bilard-ID4pzkt"
+  },
+  {
+    "title": "Pokój 1-osobowy Warszawa przy metro Stokłosy",
+    "price": "1300 zł+ czynsz: 350 zł/miesiąc",
+    "locationDate": "ul. Dzwonnicza, Ursynów Północny, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-1-osobowy-warszawa-przy-metro-stoklosy-ID4fQe3"
+  }
+]
