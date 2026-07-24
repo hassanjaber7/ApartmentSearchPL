@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "title": "duży pokój 5 min od metra Bemowo - mieszkanie 2 pokojowe",
+    "price": "1 600 zł",
+    "locationDate": "Warszawa, Bemowo - Odświeżono dzisiaj o 04:17",
+    "link": "https://www.olx.pl//d/oferta/duzy-pokoj-5-min-od-metra-bemowo-mieszkanie-2-pokojowe-CID3-ID19Xj3b.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 30 sek WUM!!! Pola Mokot. SGH UW Wola/Centr MORDOR",
+    "price": "1300 zł+ czynsz: 399 zł/miesiąc",
+    "locationDate": "ul. Żwirki i Wigury, Rakowiec, Ochota, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-30-sek-wum-pola-mokot-sgh-uw-wola-centr-mordor-ID4CjAw"
+  },
+  {
+    "title": "Pokój 1-os o WYSOKIM STANDARDZIE | pełne wyposażenie | sprzątanie",
+    "price": "1550 zł+ czynsz: 360 zł/miesiąc",
+    "locationDate": "ul. Namysłowska, Nowa Praga, Praga-Północ, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-1-os-o-wysokim-standardzie-pelne-wyposazenie-sprzatanie-ID4CdtB"
+  },
+  {
+    "title": "Duży pokój dla studentki na Żoliborzu, park, ochrona,",
+    "price": "1600 zł84,21 zł/m²",
+    "locationDate": "ul. Potocka, Marymont-Potok, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/duzy-pokoj-dla-studentki-na-zoliborzu-park-ochrona-ID4tcW5"
+  },
+  {
+    "title": "Pokój BUKO 4 | Mokotów ul. Bukowińska | Balkon | Widok | Internet",
+    "price": "1600 zł+ czynsz: 360 zł/miesiąc",
+    "locationDate": "ul. Bukowińska, Ksawerów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl//pl/oferta/pokoj-buko-4-mokotow-ul-bukowinska-balkon-widok-internet-ID4Cm6S"
+  }
+]
