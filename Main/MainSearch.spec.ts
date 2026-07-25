@@ -65,14 +65,11 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
-      try {
+     
 
         await listing.getByRole('link').nth(0).click();
-      }
-      catch (error) {
-        console.log(`Error clicking on the listing link: ${error}`);
-        continue; // Skip to the next listing if there's an error
-      }
+      
+      
       // Wait for all network connections to finish
       await page.waitForLoadState('load');
 
@@ -86,7 +83,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       // Extract the extra fees from the listing page and calculate the total price
 
 
-      const extraFee = page.locator('[data-testid="ad-parameters-container"] p:has-text("Czynsz")');
+      const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")');
       try {
         await extraFee.waitFor({ state: 'visible', timeout: 5000 });
 
@@ -109,7 +106,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       //  Wait for all network connections to finish
       await page.waitForLoadState('load');
 
-      console.log(`Price before fees: ${price ?? ''} Total Price: ${totalPrice}`);
+      
 
       // Accept cookies if the popup appears
       await handleCookieConsent(page);
@@ -170,7 +167,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0');
 
       // Extract the extra fees from the listing page and calculate the total price
-      const extraFee = page.locator('[data-testid="ad-parameters-container"] p:has-text("Czynsz")');
+      const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")');
       try {
         await extraFee.waitFor({ state: 'visible', timeout: 5000 });
 
@@ -183,7 +180,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
       }
       catch (error) {
-        console.log('No extra fee found, using the base price', error);
+        console.log('No extra fee found, using the base price');
       }
 
 
@@ -192,7 +189,6 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       //  Wait for all network connections to finish
       await page.waitForLoadState('load');
 
-      console.log(`Price before fees: ${priceRoom ?? ''} Total Price: ${totalPrice}`);
 
       // Accept cookies if the popup appears
       await handleCookieConsent(page);
