@@ -65,8 +65,6 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
-     
-
         await listing.getByRole('link').nth(0).click();
       
       
@@ -82,26 +80,29 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
       // Extract the extra fees from the listing page and calculate the total price
 
+     
+      
+      
+     await page.waitForSelector('[data-testid="ad-parameters-container"]', { 
+  state: 'visible',
+  timeout: 10000 
+});
+        const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")').first();
+        if (await extraFee.isVisible()) {
 
-      const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")');
-      try {
-        await extraFee.waitFor({ state: 'visible', timeout: 5000 });
-
-
+// Extract the text content of the extra fee element
         const extraFeeText = await extraFee.textContent();
 
-
+// Calculate the total price using the extracted extra fee and the base price
         totalPrice = totalPriceOLX(extraFeeText ?? '', price ?? '');
-
-
+        console.log(extraFeeText, price, totalPrice);
+        
       }
-      catch (error) {
-        console.log('No extra fee found, using the base price', error);
-      }
+      
 
 
       // Go back to the listings page
-      await page.goBack();
+      await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
 
       //  Wait for all network connections to finish
       await page.waitForLoadState('load');
@@ -167,25 +168,27 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0');
 
       // Extract the extra fees from the listing page and calculate the total price
-      const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")');
-      try {
-        await extraFee.waitFor({ state: 'visible', timeout: 5000 });
+   
+         await page.waitForSelector('[data-testid="ad-parameters-container"]', { 
+  state: 'visible',
+  timeout: 10000 
+});
+        const extraFee = page.locator('p:has-text("Czynsz (dodatkowo)")').first();
+        if (await extraFee.isVisible()) {
 
-
+// Extract the text content of the extra fee element
         const extraFeeText = await extraFee.textContent();
 
-
+// Calculate the total price using the extracted extra fee and the base price
         totalPrice = totalPriceOLX(extraFeeText ?? '', priceRoom ?? '');
-
-
+        console.log(extraFeeText, priceRoom, totalPrice);
+        
       }
-      catch (error) {
-        console.log('No extra fee found, using the base price');
-      }
+      
 
 
       // Go back to the listings page
-      await page.goBack();
+      await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
       //  Wait for all network connections to finish
       await page.waitForLoadState('load');
 
