@@ -1,34 +1,34 @@
 import fs from 'fs';
 import { test, expect } from '@playwright/test';
 import { sendListingsToTelegram } from './TeleBot';
-import { loadExistingListings, listingExists,CheckingListingsOlxOto } from './ListingsCheck';
+import { loadExistingListings, listingExists, CheckingListingsOlxOto } from './ListingsCheck';
 import { CalculateTotalPrice, handleCookieConsent, buildFullLink, createListingKey, pushListing, totalPriceOLX } from './Functions';
 test('Searching for apartments in Warsaw', async ({ page }) => {
 
-  test.setTimeout(600000);// Set timeout to 10 minutes for this test
+  test.setTimeout(900000);// Set timeout to 15 minutes
 
   // explicitly defining listingData
   const listingData: {
-  title: string;
-  price: string;
-  locationDate: string;
-  link: string;
-}[] = []; // Array to store the listing data to push it later to a JSON file
-    
+    title: string;
+    price: string;
+    locationDate: string;
+    link: string;
+  }[] = []; // Array to store the listing data to push it later to a JSON file
+
   // Load existing listings
   const existingListings = await loadExistingListings('listings.json');
 
   // Searching for apartments in Warsaw on OLX
   await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
-  
+
   await page.waitForLoadState('load');
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
-  
+
   // Get all listings on the page
   const listings = await page.locator('[data-testid="l-card"]').all();
   console.log(`${listings.length} apartments found on OLX`);
-  
+
   // Loop through each listing and extract the required information
   for (const listing of listings) {
     const title = await listing.locator('[data-nx-name="H4"]').textContent();
@@ -36,24 +36,24 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const locationDate = await listing.locator('[data-testid="location-date"]').textContent();
     const link = await listing.locator('[data-testid="card-title-link"]').getAttribute('href');
     let fullLink;
-    
+
     //check if it is already an otodom link inside the OLX listing
-    if(link?.includes("otodom")){
+    if (link?.includes("otodom")) {
       continue;
     }
-    else{
-    fullLink = buildFullLink('https://www.olx.pl/',link);
+    else {
+      fullLink = buildFullLink('https://www.olx.pl/', link);
     }
 
     // Create a unique key for the listing to check for duplicates
     const listingKey = createListingKey(title, price);
-    
-   // Check if the listing already exists in the existing listings
+
+    // Check if the listing already exists in the existing listings
     if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
 
-     // Create a unique key for the listing to check for duplicates between Otodom listings and olx listings
+    // Create a unique key for the listing to check for duplicates between Otodom listings and olx listings
     const listingKeyOlxOto = {
       title: title?.trim() ?? ''
     };
@@ -61,60 +61,73 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto)) {
       continue;
     }
-   
+
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
-    await listing.getByRole('link').nth(0).click();
+      try {
 
-    // Wait for all network connections to finish
-    await page.waitForLoadState('load');
+        await listing.getByRole('link').nth(0).click();
+      }
+      catch (error) {
+        console.log(`Error clicking on the listing link: ${error}`);
+        continue; // Skip to the next listing if there's an error
+      }
+      // Wait for all network connections to finish
+      await page.waitForLoadState('load');
 
-    // Accept cookies if the popup appears
-    await handleCookieConsent(page);
+      // Accept cookies if the popup appears
+      await handleCookieConsent(page);
 
-    
-    // Initialize totalPrice the extracted price from the listing page
-    let totalPrice = parseInt(price?.match(/\d/g)?.join('') ?? '0'); 
-    
-// Extract the extra fees from the listing page and calculate the total price
-    const extraFees = await page.locator('[class="css-odhutu"]').all();
-      for (const extraFee of extraFees) {
-        
-       const extraFeeText = await extraFee.textContent();
-        console.log(extraFeeText);
-        if (extraFeeText?.toLowerCase().includes('czynsz')) {
-          totalPrice = totalPriceOLX(extraFeeText, price ?? '');
-        }
-        
-        
+
+      // Initialize totalPrice the extracted price from the listing page
+      let totalPrice = parseInt(price?.match(/\d/g)?.join('') ?? '0');
+
+      // Extract the extra fees from the listing page and calculate the total price
+
+
+      const extraFee = page.locator('[data-testid="ad-parameters-container"] p:has-text("Czynsz")');
+      try {
+        await extraFee.waitFor({ state: 'visible', timeout: 5000 });
+
+
+        const extraFeeText = await extraFee.textContent();
+
+
+        totalPrice = totalPriceOLX(extraFeeText ?? '', price ?? '');
+
+
+      }
+      catch (error) {
+        console.log('No extra fee found, using the base price', error);
       }
 
-        // Go back to the listings page
-    await page.goBack();
 
-    //  Wait for all network connections to finish
-    await page.waitForLoadState('load');
+      // Go back to the listings page
+      await page.goBack();
 
-    console.log(`Price before fees: ${price ?? ''} Total Price: ${totalPrice}`);
+      //  Wait for all network connections to finish
+      await page.waitForLoadState('load');
 
-    // Accept cookies if the popup appears
-    await handleCookieConsent(page);
-    // Check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
-    if (totalPrice <= 2200) {
+      console.log(`Price before fees: ${price ?? ''} Total Price: ${totalPrice}`);
 
-      // Push the new listing data to the array
-      pushListing(title,price,locationDate,fullLink,listingData);
+      // Accept cookies if the popup appears
+      await handleCookieConsent(page);
+      // Check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
+      if (totalPrice <= 2200) {
+
+        // Push the new listing data to the array
+        pushListing(title, price, locationDate, fullLink, listingData);
+      }
     }
   }
-}
 
-// Searching for rooms in Warsaw on OLX
+  // Searching for rooms in Warsaw on OLX
   await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
-  
+
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
- 
+
   // Get all room listings on the page
   const listingsRooms = await page.locator('[data-testid="l-card"]').all();
   console.log(`${listingsRooms.length} rooms found on OLX`);
@@ -127,18 +140,18 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const linkRoom = await listingRoom.locator('[data-testid="card-title-link"]').getAttribute('href');
 
     let fullLinkRoom;
-    
+
     //check if it is already an otodom link inside the OLX listing
-    if(linkRoom?.includes("otodom")){
+    if (linkRoom?.includes("otodom")) {
       continue;
     }
-    else{
-    fullLinkRoom = buildFullLink('https://www.olx.pl/',linkRoom);
+    else {
+      fullLinkRoom = buildFullLink('https://www.olx.pl/', linkRoom);
     }
     // Create a unique key for the listing to check for duplicates
     const listingKey = createListingKey(titleRoom, priceRoom);
-   
-   // Check if the listing already exists in the existing listings
+
+    // Check if the listing already exists in the existing listings
     if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
@@ -147,51 +160,58 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
       await listingRoom.getByRole('link').nth(0).click();
 
-    // Wait for all network connections to finish
-    await page.waitForLoadState('load');
+      // Wait for all network connections to finish
+      await page.waitForLoadState('load');
 
-    // Accept cookies if the popup appears
-    await handleCookieConsent(page);
+      // Accept cookies if the popup appears
+      await handleCookieConsent(page);
 
-     // Initialize feeValueNumber the extracted price from the listing page
-    let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0'); 
+      // Initialize feeValueNumber the extracted price from the listing page
+      let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0');
 
-// Extract the extra fees from the listing page and calculate the total price
-    const extraFees = await page.locator('[class="css-odhutu"]').all();
-      for (const extraFee of extraFees) {
+      // Extract the extra fees from the listing page and calculate the total price
+      const extraFee = page.locator('[data-testid="ad-parameters-container"] p:has-text("Czynsz")');
+      try {
+        await extraFee.waitFor({ state: 'visible', timeout: 5000 });
+
+
         const extraFeeText = await extraFee.textContent();
-        console.log(extraFeeText);
-        if (extraFeeText?.toLowerCase().includes('czynsz')) {
-          totalPrice = totalPriceOLX(extraFeeText, priceRoom ?? '');
-        }
-        
+
+
+        totalPrice = totalPriceOLX(extraFeeText ?? '', priceRoom ?? '');
+
+
+      }
+      catch (error) {
+        console.log('No extra fee found, using the base price', error);
       }
 
-// Go back to the listings page
-    await page.goBack();
-    //  Wait for all network connections to finish
-    await page.waitForLoadState('load');
 
-    console.log(`Price before fees: ${priceRoom ?? ''} Total Price: ${totalPrice}`);
+      // Go back to the listings page
+      await page.goBack();
+      //  Wait for all network connections to finish
+      await page.waitForLoadState('load');
 
-    // Accept cookies if the popup appears
-    await handleCookieConsent(page);
+      console.log(`Price before fees: ${priceRoom ?? ''} Total Price: ${totalPrice}`);
 
-    // check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
-    if (totalPrice <= 2200) {
-    // Push the new listing data to the array
-     pushListing(titleRoom,priceRoom,locationDateRoom,fullLinkRoom,listingData);
+      // Accept cookies if the popup appears
+      await handleCookieConsent(page);
+
+      // check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
+      if (totalPrice <= 2200) {
+        // Push the new listing data to the array
+        pushListing(titleRoom, priceRoom, locationDateRoom, fullLinkRoom, listingData);
+      }
+
     }
-
   }
-}
 
   // Searching for apartments in Warsaw on Otodom
   await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=25&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
 
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
-  
+
   // Get all apartment listings on the page
   const listingsApartmentsOto = await page.locator('[data-sentry-component="AdvertCard"]').all();
   console.log(`${listingsApartmentsOto.length} apartments found on Otodom`);
@@ -205,30 +225,30 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const priceApartmentsOto = await listingApartmentsOto.locator('[data-cy="listing-item-price"]').textContent();
     const locationApartmentsOto = await listingApartmentsOto.locator('[data-cy="advert-card-address"]').textContent();
     const linkApartmentsOto = await listingApartmentsOto.locator('[data-cy="listing-item-link"]').getAttribute('href');
-    const dateApartmentsOto = await listingApartmentsOto.locator('[data-sentry-component="CustomizedTag"]');
-    const promotedListing = await listingApartmentsOto.locator('button:has-text("Promowane")');
+    const dateApartmentsOto = listingApartmentsOto.locator('[data-sentry-component="CustomizedTag"]');
+    const promotedListing = listingApartmentsOto.locator('button:has-text("Promowane")');
 
     // Check if the date and promoted listing elements are visible before extracting their text content
     if (await dateApartmentsOto.isVisible()) {
-       dateText = await dateApartmentsOto.textContent() ?? '';
+      dateText = await dateApartmentsOto.textContent() ?? '';
     }
 
-    if(await promotedListing.isVisible()){
+    if (await promotedListing.isVisible()) {
       promotedListingText = await promotedListing.textContent() ?? '';
     }
 
     // Extract numbers from the price string and calculate the total price
 
     totalPrice = CalculateTotalPrice(priceApartmentsOto ?? '');
-    
-   
-    const fullLinkApartmentsOto = buildFullLink('https://www.otodom.pl/',linkApartmentsOto);
-  
+
+
+    const fullLinkApartmentsOto = buildFullLink('https://www.otodom.pl/', linkApartmentsOto);
+
     // Create a unique key for the listing to check for duplicates between Otodom listings
-    
+
     const listingKey = createListingKey(titleApartmentsOto, priceApartmentsOto);
-    
-   // Check if the Otodom listing already exists in the existing listings in comparison to other Otodom listings
+
+    // Check if the Otodom listing already exists in the existing listings in comparison to other Otodom listings
     if (await listingExists(existingListings, listingKey)) {
       continue;
     }
@@ -237,24 +257,24 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const listingKeyOlxOto = {
       title: titleApartmentsOto?.trim() ?? ''
     };
-// Check if the Otodom listing already exists in the existing listings as OLX listing
+    // Check if the Otodom listing already exists in the existing listings as OLX listing
     if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto) || await CheckingListingsOlxOto(listingData, listingKeyOlxOto)) {
       continue;
     }
-     
+
     // Check if the listing is posted today or is promoted and push it to the array and price is less than or equal to 2500 PLN
     if ((dateText?.toLowerCase().includes('dzisiaj') && totalPrice <= 2200) || (promotedListingText?.toLowerCase().includes('promowane') && totalPrice <= 2200)) {
-     
-      pushListing(titleApartmentsOto,priceApartmentsOto,locationApartmentsOto,fullLinkApartmentsOto,listingData);
-      
+
+      pushListing(titleApartmentsOto, priceApartmentsOto, locationApartmentsOto, fullLinkApartmentsOto, listingData);
+
+    }
   }
-}
 
-// Searching for rooms in Warsaw on Otodom
-await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
+  // Searching for rooms in Warsaw on Otodom
+  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
 
-// Accept cookies if the popup appears
-await handleCookieConsent(page);
+  // Accept cookies if the popup appears
+  await handleCookieConsent(page);
 
   // Get all room listings on the page
   const listingsRoomsOto = await page.locator('[data-sentry-component="AdvertCard"]').all();
@@ -264,19 +284,19 @@ await handleCookieConsent(page);
   for (const listingRoomsOto of listingsRoomsOto) {
     let totalPrice = 0;
     let dateText = '';
-     let promotedListingText = '';
+    let promotedListingText = '';
 
     const titleRoomsOto = await listingRoomsOto.locator('[data-cy="listing-item-title"]').textContent();
     const priceRoomsOto = await listingRoomsOto.locator('[data-cy="listing-item-price"]').textContent();
     const locationRoomsOto = await listingRoomsOto.locator('[data-cy="advert-card-address"]').textContent();
     const linkRoomsOto = await listingRoomsOto.locator('[data-cy="listing-item-link"]').getAttribute('href');
-    const dateRoomsOto = await listingRoomsOto.locator('[data-sentry-component="CustomizedTag"]');
-    const promotedListing = await listingRoomsOto.locator('button:has-text("Promowane")');
+    const dateRoomsOto = listingRoomsOto.locator('[data-sentry-component="CustomizedTag"]');
+    const promotedListing = listingRoomsOto.locator('button:has-text("Promowane")');
 
 
     // Check if the date and promoted listing elements are visible before extracting their text content
     if (await dateRoomsOto.isVisible()) {
-       dateText = await dateRoomsOto.textContent() ?? '';
+      dateText = await dateRoomsOto.textContent() ?? '';
     }
     if (await promotedListing.isVisible()) {
       promotedListingText = await promotedListing.textContent() ?? '';
@@ -287,12 +307,12 @@ await handleCookieConsent(page);
     totalPrice = CalculateTotalPrice(priceRoomsOto ?? '');
 
     // Create the full link for the room listing
-    
+
     const fullLinkRoomsOto = buildFullLink('https://www.otodom.pl/', linkRoomsOto);
 
     // Create a unique key for the listing to check for duplicates between Otodom listings
     const listingKey = createListingKey(titleRoomsOto, priceRoomsOto);
-    
+
     if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
@@ -302,23 +322,23 @@ await handleCookieConsent(page);
       title: titleRoomsOto?.trim() ?? ''
     };
 
-// Check if the Otodom listing already exists in the existing listings as OLX listing
+    // Check if the Otodom listing already exists in the existing listings as OLX listing
     if (await CheckingListingsOlxOto(existingListings, listingKeyOlxOto) || await CheckingListingsOlxOto(listingData, listingKeyOlxOto)) {
       continue;
     }
 
     // Check if the listing is posted today or is promoted and push it to the array and price is less than or equal to 2500 PLN
     if ((dateText?.toLowerCase().includes('dzisiaj') && totalPrice <= 2200) || (promotedListingText?.toLowerCase().includes('promowane') && totalPrice <= 2200)) {
-      
-      pushListing(titleRoomsOto,priceRoomsOto,locationRoomsOto,fullLinkRoomsOto,listingData);
-     
-  }
-}
 
-// Merge the new listings with existing ones and save to JSON
- const allData = [...existingListings, ...listingData];
- fs.writeFileSync('listings.json', JSON.stringify(allData, null, 2));
-  
+      pushListing(titleRoomsOto, priceRoomsOto, locationRoomsOto, fullLinkRoomsOto, listingData);
+
+    }
+  }
+
+  // Merge the new listings with existing ones and save to JSON
+  const allData = [...existingListings, ...listingData];
+  fs.writeFileSync('listings.json', JSON.stringify(allData, null, 2));
+
   console.log('💾 Saved to listings.json');
   // Save the new listings to a separate JSON file for Telegram
   const jsonData = JSON.stringify(listingData, null, 2);
@@ -327,7 +347,7 @@ await handleCookieConsent(page);
   // Preview the data
   console.log('\n📦 First listing:');
   console.log(listingData[0]);
-  
+
   // View all data as table
   console.table(listingData);
 
