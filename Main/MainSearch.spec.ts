@@ -2,7 +2,7 @@ import fs from 'fs';
 import { test, expect } from '@playwright/test';
 import { sendListingsToTelegram } from './TeleBot';
 import { loadExistingListings, listingExists,CheckingListingsOlxOto } from './ListingsCheck';
-import { CalculateTotalPrice, handleCookieConsent, buildFullLink, createListingKey, pushListing} from './Functions';
+import { CalculateTotalPrice, handleCookieConsent, buildFullLink, createListingKey, pushListing, totalPriceOLX } from './Functions';
 test('Searching for apartments in Warsaw', async ({ page }) => {
 
   test.setTimeout(600000);// Set timeout to 10 minutes for this test
@@ -19,15 +19,16 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   const existingListings = await loadExistingListings('listings.json');
 
   // Searching for apartments in Warsaw on OLX
-  await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1000&search%5Bfilter_float_price:to%5D=2200');
+  await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
   
+  await page.waitForLoadState('load');
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
   
   // Get all listings on the page
   const listings = await page.locator('[data-testid="l-card"]').all();
   console.log(`${listings.length} apartments found on OLX`);
-
+  
   // Loop through each listing and extract the required information
   for (const listing of listings) {
     const title = await listing.locator('[data-nx-name="H4"]').textContent();
@@ -48,7 +49,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     const listingKey = createListingKey(title, price);
     
    // Check if the listing already exists in the existing listings
-    if (await listingExists(existingListings, listingKey)) {
+    if (await listingExists(existingListings, listingKey) || await listingExists(listingData, listingKey)) {
       continue;
     }
 
@@ -64,25 +65,52 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
-    // await listing.getByRole('link').nth(0).click();
-    // // ✅ Wait for all network connections to finish
-    // await page.waitForLoadState('load');
-    // // Accept cookies if the popup appears
-    // await handleCookieConsent(page);
+    await listing.getByRole('link').nth(0).click();
 
+    // Wait for all network connections to finish
+    await page.waitForLoadState('load');
 
-    // await page.goBack();
-    // // ✅ Wait for all network connections to finish
-    // await page.waitForLoadState('load');
-    // // Accept cookies if the popup appears
-    // await handleCookieConsent(page);
-    // Push the new listing data to the array
-    pushListing(title,price,locationDate,fullLink,listingData);
+    // Accept cookies if the popup appears
+    await handleCookieConsent(page);
+
+    
+    // Initialize totalPrice the extracted price from the listing page
+    let totalPrice = parseInt(price?.match(/\d/g)?.join('') ?? '0'); 
+    
+// Extract the extra fees from the listing page and calculate the total price
+    const extraFees = await page.locator('[class="css-odhutu"]').all();
+      for (const extraFee of extraFees) {
+        
+       const extraFeeText = await extraFee.textContent();
+        console.log(extraFeeText);
+        if (extraFeeText?.toLowerCase().includes('czynsz')) {
+          totalPrice = totalPriceOLX(extraFeeText, price ?? '');
+        }
+        
+        
+      }
+
+        // Go back to the listings page
+    await page.goBack();
+
+    //  Wait for all network connections to finish
+    await page.waitForLoadState('load');
+
+    console.log(`Price before fees: ${price ?? ''} Total Price: ${totalPrice}`);
+
+    // Accept cookies if the popup appears
+    await handleCookieConsent(page);
+    // Check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
+    if (totalPrice <= 2200) {
+
+      // Push the new listing data to the array
+      pushListing(title,price,locationDate,fullLink,listingData);
+    }
   }
 }
 
 // Searching for rooms in Warsaw on OLX
-  await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1000&search%5Bfilter_float_price:to%5D=2200');
+  await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
   
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
@@ -116,14 +144,50 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     }
     // Check if the listing is posted today and push it to the array
     if (locationDateRoom?.toLowerCase().includes('dzisiaj')) {
+
+      await listingRoom.getByRole('link').nth(0).click();
+
+    // Wait for all network connections to finish
+    await page.waitForLoadState('load');
+
+    // Accept cookies if the popup appears
+    await handleCookieConsent(page);
+
+     // Initialize feeValueNumber the extracted price from the listing page
+    let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0'); 
+
+// Extract the extra fees from the listing page and calculate the total price
+    const extraFees = await page.locator('[class="css-odhutu"]').all();
+      for (const extraFee of extraFees) {
+        const extraFeeText = await extraFee.textContent();
+        console.log(extraFeeText);
+        if (extraFeeText?.toLowerCase().includes('czynsz')) {
+          totalPrice = totalPriceOLX(extraFeeText, priceRoom ?? '');
+        }
+        
+      }
+
+// Go back to the listings page
+    await page.goBack();
+    //  Wait for all network connections to finish
+    await page.waitForLoadState('load');
+
+    console.log(`Price before fees: ${priceRoom ?? ''} Total Price: ${totalPrice}`);
+
+    // Accept cookies if the popup appears
+    await handleCookieConsent(page);
+
+    // check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
+    if (totalPrice <= 2200) {
     // Push the new listing data to the array
      pushListing(titleRoom,priceRoom,locationDateRoom,fullLinkRoom,listingData);
+    }
 
   }
 }
 
   // Searching for apartments in Warsaw on Otodom
-  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=25&limit=36&priceMin=1000&priceMax=2200&by=LATEST&direction=DESC');
+  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=25&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
 
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
@@ -187,7 +251,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 }
 
 // Searching for rooms in Warsaw on Otodom
-await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1000&priceMax=2200&by=LATEST&direction=DESC');
+await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
 
 // Accept cookies if the popup appears
 await handleCookieConsent(page);

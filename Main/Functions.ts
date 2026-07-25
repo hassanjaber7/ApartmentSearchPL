@@ -22,11 +22,12 @@ export async function handleCookieConsent(
   buttonName: string = 'Akceptuj wszystkie'
 ): Promise<void> {
   try {
-    const consentButton = page.getByRole('button', { name: buttonName });
-    if (await consentButton.isVisible()) {
+    const consentButton = page.locator('[id="onetrust-accept-btn-handler"]');
+    await consentButton.waitFor({ state: 'visible', timeout: 5000 });// Wait for the button to be visible for up to 5 seconds
+    
       await consentButton.click();
       console.log(`Accepted cookies: "${buttonName}"`);
-    }
+    
   } catch (error) {
     // Button not found or not visible - this is fine, continue
     console.log(`No cookie consent popup found for "${buttonName}"`);
@@ -69,4 +70,17 @@ export function pushListing(title: string | null | undefined,
         locationDate: locationDate?.trim() ?? '',
         link: link ?? ''
       });
+  }
+
+// Function to calculate total price for OLX listings
+  export function totalPriceOLX(feeString: string, priceString: string): number {
+
+    
+    const feeValueNumber = parseInt(feeString.match(/\d/g)?.join('') ?? '0');
+    
+    
+    const priceValueNumber = parseInt(priceString.match(/\d/g)?.join('') ?? '0');
+     
+    const total = feeValueNumber + priceValueNumber;
+    return total;
   }
