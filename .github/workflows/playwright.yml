@@ -12,38 +12,22 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    
-    # ✅ CORRECT: Only 'contents: write' is needed
-    # 'secrets: write' does not exist as a permission
-    permissions:
-      contents: write  # This allows pushing to the repository AND updating secrets via API
-    
-    # Inject GitHub Secrets as environment variables
+     # Inject GitHub Secrets as environment variables
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
-      ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+    permissions:
+      contents: write  # This allows pushing to the repository
     if: github.repository != 'hassanjaber7/ApartmentSearchPL' || true
-    
     steps:
     - uses: actions/checkout@v4
-    
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    
     - name: Install dependencies
       run: npm ci
-    
-    # ✅ Install tweetsodium for encrypting secrets
-    - name: Install additional packages
-      run: npm install tweetsodium
-    
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    
     - name: Run Playwright tests
       run: npx playwright test
     
@@ -63,12 +47,11 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
-    # ✅ Commit and push updated listings AND last-update-id.txt
-    - name: Commit and push updated listings and Telegram update state
+    - name: Commit and push updated listings
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add listings.json last-update-id.txt 2>/dev/null || true
+        git add listings.json
         git status
-        git commit -m "Update listings data and Telegram update state [skip ci]" || echo "No changes to commit"
+        git commit -m "Update listings data [skip ci]" || echo "No changes to commit"
         git push
