@@ -14,16 +14,11 @@ export async function loadExistingListings(filename = 'listings.json') {
 }
 
 //  Function to check if listing already exists
-export async function listingExists(existingListings: any[], newListing: { title: any; price: any; }) {
+export function listingExists(existingListings: any[], newListing: { title: any; price: any; }) {
   return existingListings.some(listing =>
     listing.title === newListing.title &&
     listing.price === newListing.price
   );
 }
 
-// Function to check if listing already exists based on title only (between OLX and Otodom)
-export async function CheckingListingsOlxOto(existingListings: any[], newListing: { title: any; }) {
-  return existingListings.some(listing =>
-    listing.title === newListing.title
-  );
-}
+
