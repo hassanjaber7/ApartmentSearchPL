@@ -26,11 +26,10 @@ export async function handleCookieConsent(
     await consentButton.waitFor({ state: 'visible', timeout: 5000 });// Wait for the button to be visible for up to 5 seconds
 
     await consentButton.click();
-    console.log(`Accepted cookies: "${buttonName}"`);
+    
 
   } catch (error) {
-    // Button not found or not visible - this is fine, continue
-    console.log(`No cookie consent popup found for "${buttonName}"`);
+    
   }
 }
 

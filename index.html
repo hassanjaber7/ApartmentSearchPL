@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 Apartment Alerts - Subscribe</title>
+    <style>
+        /* ============================================
+           CSS STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 50px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #f7fafc;
+            color: #1a202c;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            background: white;
+        }
+
+        .form-group input::placeholder {
+            color: #a0aec0;
+        }
+
+        .form-group .hint {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-top: 5px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            display: none;
+            text-align: center;
+        }
+
+        .message.success {
+            display: block;
+            background: #f0fff4;
+            color: #38a169;
+            border: 1px solid #9ae6b4;
+        }
+
+        .message.error {
+            display: block;
+            background: #fff5f5;
+            color: #e53e3e;
+            border: 1px solid #feb2b2;
+        }
+
+        .message.info {
+            display: block;
+            background: #ebf8ff;
+            color: #3182ce;
+            border: 1px solid #90cdf4;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #a0aec0;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .form-group input {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================
+        HEADER
+        ============================================ -->
+        <div class="header">
+            <div class="icon">🏠</div>
+            <h1>Apartment Alerts</h1>
+            <p>Get notified when new apartments match your criteria</p>
+        </div>
+
+        <!-- ============================================
+        FORM
+        ============================================ -->
+        <form id="subscribeForm" novalidate>
+            <div class="form-group">
+                <label for="phone">📱 Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="e.g., +48123456789"
+                    required
+                    autocomplete="tel"
+                />
+                <div class="hint">Enter your phone number with country code (e.g., +48 for Poland)</div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                🔔 Subscribe Now
+            </button>
+        </form>
+
+        <!-- ============================================
+        MESSAGE AREA
+        ============================================ -->
+        <div id="message" class="message"></div>
+
+        <!-- ============================================
+        FOOTER
+        ============================================ -->
+        <div class="footer">
+            <p>You'll receive alerts when new listings are found. Unsubscribe anytime.</p>
+            <p style="margin-top: 5px;">
+                <a href="#" id="unsubscribeLink">Unsubscribe</a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script>
+        // ============================================
+        // CONFIGURATION
+        // ============================================
+
+        // 🔧 Replace this with your actual webhook URL or Telegram bot link
+        const WEBHOOK_URL = 'https://your-api.com/subscribe';
+
+        // If you don't have a webhook, you can use a Google Form URL
+        // const WEBHOOK_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?usp=pp_url&entry.1234567890=';
+
+        // ============================================
+        // DOM REFERENCES
+        // ============================================
+
+        const form = document.getElementById('subscribeForm');
+        const phoneInput = document.getElementById('phone');
+        const submitBtn = document.getElementById('submitBtn');
+        const messageEl = document.getElementById('message');
+        const unsubscribeLink = document.getElementById('unsubscribeLink');
+
+        // ============================================
+        // HELPERS
+        // ============================================
+
+        function showMessage(text, type = 'info') {
+            messageEl.textContent = text;
+            messageEl.className = 'message ' + type;
+            // Auto-hide after 8 seconds
+            clearTimeout(window.messageTimeout);
+            window.messageTimeout = setTimeout(() => {
+                messageEl.className = 'message';
+            }, 8000);
+        }
+
+        function setLoading(isLoading) {
+            if (isLoading) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<span class="spinner"></span> Subscribing...`;
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '🔔 Subscribe Now';
+            }
+        }
+
+        function validatePhone(phone) {
+            // Basic validation: starts with + and has at least 10 digits
+            const cleaned = phone.replace(/\s/g, '');
+            return /^\+\d{10,15}$/.test(cleaned);
+        }
+
+        // ============================================
+        // FORMAT PHONE NUMBER AS USER TYPES
+        // ============================================
+
+        phoneInput.addEventListener('input', function(e) {
+            // Remove any non-digit or non-plus characters
+            let value = this.value.replace(/[^+\d]/g, '');
+            // Ensure plus is only at the start
+            if (value.startsWith('+')) {
+                value = '+' + value.slice(1).replace(/\+/g, '');
+            } else {
+                value = value.replace(/\+/g, '');
+            }
+            this.value = value;
+        });
+
+        // ============================================
+        // FORM SUBMISSION
+        // ============================================
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const phone = phoneInput.value.trim();
+
+            // Validate
+            if (!phone) {
+                showMessage('📱 Please enter your phone number.', 'error');
+                return;
+            }
+
+            if (!validatePhone(phone)) {
+                showMessage('⚠️ Please enter a valid phone number with country code (e.g., +48123456789)', 'error');
+                return;
+            }
+
+            // Show loading state
+            setLoading(true);
+            showMessage('⏳ Subscribing...', 'info');
+
+            try {
+                // ============================================
+                // OPTION 1: Send to Webhook / API
+                // ============================================
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        phone: phone,
+                        source: 'website-subscription',
+                        timestamp: new Date().toISOString()
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage(`✅ Successfully subscribed! You'll receive alerts for new apartments.`, 'success');
+                    phoneInput.value = '';
+                } else {
+                    showMessage(`❌ ${data.message || 'Something went wrong. Please try again.'}`, 'error');
+                }
+
+            } catch (error) {
+                // ============================================
+                // OPTION 2: Fallback - Send to Telegram (via bot)
+                // ============================================
+                console.warn('Webhook failed, falling back to Telegram:', error);
+
+                try {
+                    // You can use a Telegram bot to receive the phone number
+                    const telegramBotToken = 'YOUR_BOT_TOKEN';
+                    const telegramChatId = 'YOUR_CHAT_ID';
+                    const telegramUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+                    const telegramResponse = await fetch(telegramUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: telegramChatId,
+                            text: `📱 New subscriber: ${phone}`,
+                            parse_mode: 'Markdown',
+                        }),
+                    });
+
+                    if (telegramResponse.ok) {
+                        showMessage(`✅ Subscribed! We'll notify you about new listings.`, 'success');
+                        phoneInput.value = '';
+                    } else {
+                        showMessage(`❌ Could not subscribe. Please try again later.`, 'error');
+                    }
+
+                } catch (fallbackError) {
+                    // ============================================
+                    // OPTION 3: Save to localStorage (offline fallback)
+                    // ============================================
+                    try {
+                        const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+                        if (!subscribers.includes(phone)) {
+                            subscribers.push(phone);
+                            localStorage.setItem('subscribers', JSON.stringify(subscribers));
+                            showMessage(`✅ Subscribed (offline mode). You'll be notified when back online.`, 'success');
+                            phoneInput.value = '';
+                        } else {
+                            showMessage(`ℹ️ This number is already subscribed.`, 'info');
+                        }
+                    } catch {
+                        showMessage(`❌ Could not subscribe. Please try again later.`, 'error');
+                    }
+                }
+            }
+
+            setLoading(false);
+        });
+
+        // ============================================
+        // UNSUBSCRIBE
+        // ============================================
+
+        unsubscribeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const phone = phoneInput.value.trim();
+
+            if (!phone) {
+                showMessage('📱 Please enter your phone number to unsubscribe.', 'info');
+                return;
+            }
+
+            if (!validatePhone(phone)) {
+                showMessage('⚠️ Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // Send unsubscribe request
+            fetch(WEBHOOK_URL + '/unsubscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ phone: phone }),
+            })
+            .then(res => res.json())
+            .then(() => {
+                showMessage(`✅ Unsubscribed successfully.`, 'success');
+                phoneInput.value = '';
+            })
+            .catch(() => {
+                // Try local storage
+                try {
+                    const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+                    const updated = subscribers.filter(p => p !== phone);
+                    localStorage.setItem('subscribers', JSON.stringify(updated));
+                    showMessage(`✅ Unsubscribed successfully.`, 'success');
+                    phoneInput.value = '';
+                } catch {
+                    showMessage(`❌ Could not unsubscribe. Please try again.`, 'error');
+                }
+            });
+        });
+
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+
+        phoneInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                form.dispatchEvent(new Event('submit'));
+            }
+        });
+
+        console.log('🚀 Apartment Alerts subscription page loaded!');
+    </script>
+
+</body>
+</html>

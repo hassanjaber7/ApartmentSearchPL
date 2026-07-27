@@ -53,16 +53,17 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       continue;
     }
 
-   
+
 
     // Check if the listing is posted today and push it to the array
     if (locationDate?.toLowerCase().includes('dzisiaj')) {
 
+      // Open the listing in a new tab and extract the extra fees
       const pagePromise = page.context().waitForEvent('page');
       await listing.getByRole('link').nth(0).click({ modifiers: ['Control'] }); // Open the listing in a new tab
       const newPage = await pagePromise;
 
-      // Wait for all network connections to finish
+      // Wait for dom content to load before proceeding
       await newPage.waitForLoadState('domcontentloaded');
 
       // Accept cookies if the popup appears
@@ -73,9 +74,6 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       let totalPrice = parseInt(price?.match(/\d/g)?.join('') ?? '0');
 
       // Extract the extra fees from the listing page and calculate the total price
-
-
-
 
       await newPage.waitForSelector('[data-testid="ad-parameters-container"]', {
         state: 'visible',
@@ -89,19 +87,21 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
         // Calculate the total price using the extracted extra fee and the base price
         totalPrice = totalPriceOLX(extraFeeText ?? '', price ?? '');
-        console.log(extraFeeText, price, totalPrice);
+        
 
       }
 
 
 
       await newPage.close(); // Close the new tab after extracting the information
+
       // Check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
       if (totalPrice <= 2200) {
 
         // Push the new listing data to the array
         pushListing(title, price, locationDate, fullLink, listingData);
       }
+      // Bring the main page back to the front after closing the new tab
       await page.bringToFront();
 
     }
@@ -143,11 +143,12 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     // Check if the listing is posted today and push it to the array
     if (locationDateRoom?.toLowerCase().includes('dzisiaj')) {
 
+      // Open the listing in a new tab and extract the extra fees
       const pagePromise = page.context().waitForEvent('page');
       await listingRoom.getByRole('link').nth(0).click({ modifiers: ['Control'] }); // Open the listing in a new tab
       const newPage = await pagePromise;
 
-      // Wait for all network connections to finish
+      // Wait for dom content to load before proceeding
       await newPage.waitForLoadState('domcontentloaded');
 
       // Accept cookies if the popup appears
@@ -157,7 +158,6 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       let totalPrice = parseInt(priceRoom?.match(/\d/g)?.join('') ?? '0');
 
       // Extract the extra fees from the listing page and calculate the total price
-
       await newPage.waitForSelector('[data-testid="ad-parameters-container"]', {
         state: 'visible',
         timeout: 10000
@@ -170,13 +170,9 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
         // Calculate the total price using the extracted extra fee and the base price
         totalPrice = totalPriceOLX(extraFeeText ?? '', priceRoom ?? '');
-        console.log(extraFeeText, priceRoom, totalPrice);
 
       }
 
-
-
-      // Go back to the listings page
       await newPage.close(); // Close the new tab after extracting the information
 
       // check if the total price is less than or equal to 2200 PLN before pushing the listing data to the array
@@ -184,6 +180,8 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
         // Push the new listing data to the array
         pushListing(titleRoom, priceRoom, locationDateRoom, fullLinkRoom, listingData);
       }
+
+      // Bring the main page back to the front after closing the new tab
       await page.bringToFront();
     }
   }
