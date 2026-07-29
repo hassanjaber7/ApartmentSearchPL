@@ -42,7 +42,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       continue;
     }
     else {
-      fullLink = buildFullLink('https://www.olx.pl/', link);
+      fullLink = buildFullLink('https://www.olx.pl', link);
     }
 
     // Create a unique key for the listing to check for duplicates
@@ -131,7 +131,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
       continue;
     }
     else {
-      fullLinkRoom = buildFullLink('https://www.olx.pl/', linkRoom);
+      fullLinkRoom = buildFullLink('https://www.olx.pl', linkRoom);
     }
     // Create a unique key for the listing to check for duplicates
     const listingKey = createListingKey(titleRoom, priceRoom);
@@ -222,7 +222,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
     totalPrice = CalculateTotalPrice(priceApartmentsOto ?? '');
 
 
-    const fullLinkApartmentsOto = buildFullLink('https://www.otodom.pl/', linkApartmentsOto);
+    const fullLinkApartmentsOto = buildFullLink('https://www.otodom.pl', linkApartmentsOto);
 
     // Create a unique key for the listing to check for duplicates between Otodom listings
 
@@ -280,7 +280,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
 
     // Create the full link for the room listing
 
-    const fullLinkRoomsOto = buildFullLink('https://www.otodom.pl/', linkRoomsOto);
+    const fullLinkRoomsOto = buildFullLink('https://www.otodom.pl', linkRoomsOto);
 
     // Create a unique key for the listing to check for duplicates between Otodom listings
     const listingKey = createListingKey(titleRoomsOto, priceRoomsOto);
