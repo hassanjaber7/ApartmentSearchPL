@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Cale mieszkanie do wynajem",
+    "price": "1 700 zł",
+    "locationDate": "Warszawa, Wola - Dzisiaj o 02:35",
+    "link": "https://www.olx.pl/d/oferta/cale-mieszkanie-do-wynajem-CID3-ID1bGFUZ.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Piaseczno piętro domu 33m2, 2 pokoje, 2100zł",
+    "price": "2100 zł63,64 zł/m²",
+    "locationDate": "Redutowa, Piaseczno, Piaseczno, piaseczyński, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/mini-kawalerka-z-komorka-metro-trocka-ID4aToN"
+  },
+  {
+    "title": "Pokój na wynajem w sercu Mokotowa",
+    "price": "1700 zł+ czynsz: 200 zł/miesiąc",
+    "locationDate": "ul. Kwiatowa, Stary Mokotów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-sercu-mokotowa-ID4CqFH"
+  },
+  {
+    "title": "Pokój w bardzo dobrej lokalizacji wolny od 1.09",
+    "price": "1680 zł",
+    "locationDate": "ul. Dymińska, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-bardzo-dobrej-lokalizacji-wolny-od-1-09-ID4CpIF"
+  }
+]
