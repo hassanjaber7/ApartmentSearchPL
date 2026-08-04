@@ -19,7 +19,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   const existingListings = await loadExistingListings('listings.json');
 
   // Searching for apartments in Warsaw on OLX
-  await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
+  await page.goto('https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/?search%5Bdist%5D=30&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1200&search%5Bfilter_float_price:to%5D=2200');
 
   await page.waitForLoadState('load');
   // Accept cookies if the popup appears
@@ -108,7 +108,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   }
 
   // Searching for rooms in Warsaw on OLX
-  await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1600&search%5Bfilter_float_price:to%5D=2200');
+  await page.goto('https://www.olx.pl/nieruchomosci/stancje-pokoje/warszawa/q-room-for-rent/?search%5Bdist%5D=15&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:from%5D=1400&search%5Bfilter_float_price:to%5D=2200');
 
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
@@ -187,7 +187,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   }
 
   // Searching for apartments in Warsaw on Otodom
-  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=25&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
+  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=25&limit=36&priceMin=1200&priceMax=2200&by=LATEST&direction=DESC');
 
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
@@ -243,7 +243,7 @@ test('Searching for apartments in Warsaw', async ({ page }) => {
   }
 
   // Searching for rooms in Warsaw on Otodom
-  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1600&priceMax=2200&by=LATEST&direction=DESC');
+  await page.goto('https://www.otodom.pl/pl/wyniki/wynajem/pokoj/mazowieckie/warszawa/warszawa/warszawa?distanceRadius=15&limit=36&priceMin=1400&priceMax=2200&by=LATEST&direction=DESC');
 
   // Accept cookies if the popup appears
   await handleCookieConsent(page);
