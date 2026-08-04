@@ -1,8 +1,20 @@
 [
   {
+    "title": "Pokój na wynajem w sercu Mokotowa",
+    "price": "1700 zł+ czynsz: 200 zł/miesiąc",
+    "locationDate": "ul. Kwiatowa, Stary Mokotów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-sercu-mokotowa-ID4CqFH"
+  },
+  {
     "title": "Pokój w bardzo dobrej lokalizacji wolny od 1.09",
     "price": "1680 zł",
     "locationDate": "ul. Dymińska, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
-    "link": "https://www.otodom.pl//pl/oferta/pokoj-w-bardzo-dobrej-lokalizacji-wolny-od-1-09-ID4CpIF"
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-bardzo-dobrej-lokalizacji-wolny-od-1-09-ID4CpIF"
+  },
+  {
+    "title": "Mieszkanie Nieporęt. Cena z czynszem",
+    "price": "1 900 zł",
+    "locationDate": "Nieporęt - Odświeżono dzisiaj o 07:07",
+    "link": "https://www.olx.pl/d/oferta/mieszkanie-nieporet-cena-z-czynszem-CID3-ID1bFeu4.html?search_reason=search%7Corganic"
   }
 ]
