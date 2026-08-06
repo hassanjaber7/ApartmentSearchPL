@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Pokój Politechnika, SGGW, SGH, Łazarski, UW WZ, Metro, Galeria Mokotów",
+    "price": "1400 zł+ czynsz: 399 zł/miesiąc",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-politechnika-sggw-sgh-lazarski-uw-wz-metro-galeria-mokotow-ID4CwZr"
+  },
+  {
+    "title": "Pokój w 3 pokojowym mieszkaniu, 150m od metra Wawrzyszew, UKSW, UW,AWF",
+    "price": "1400 zł+ czynsz: 450 zł/miesiąc",
+    "locationDate": "ul. Jana Kasprowicza, Stare Bielany, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-3-pokojowym-mieszkaniu-150m-od-metra-wawrzyszew-uksw-uw-awf-ID4xxoa"
+  },
+  {
+    "title": "BRONIEWSKIEGO Pokój 1-osobowy, CH ARKADIA",
+    "price": "1600 zł+ czynsz: 1 zł/miesiąc",
+    "locationDate": "ul. Władysława Broniewskiego, Sady Żoliborskie, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/broniewskiego-pokoj-1-osobowy-ch-arkadia-ID4sXnt"
+  },
+  {
+    "title": "Pokój 16 m² + balkon 12 m² | Rondo Wiatraczna | od zaraz",
+    "price": "1900 zł118,75 zł/m²",
+    "locationDate": "ul. Grochowska, Grochów, Praga-Południe, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-16-m-balkon-12-m-rondo-wiatraczna-od-zaraz-ID4CvlH"
+  }
+]
