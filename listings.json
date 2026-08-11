@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "title": "Pl. Wilsona, przy metrze, tani pokój/mieszkanie dla studenta, ucznia",
+    "price": "1400 zł87,50 zł/m²",
+    "locationDate": "pl. Plac Thomasa Woodrowa Wilsona, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pl-wilsona-przy-metrze-tani-pokoj-mieszkanie-dla-studenta-ucznia-ID4CzDq"
+  },
+  {
+    "title": "do wynajęcia pokój Warszawa Śródmieście Rondo ONZ – 1200 pln + opłaty",
+    "price": "1200 zł+ czynsz: 425 zł/miesiąc",
+    "locationDate": "ul. Grzybowska, Mirów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/do-wynajecia-pokoj-warszawa-srodmiescie-rondo-onz-1200-pln-oplaty-ID4CfGW"
+  },
+  {
+    "title": "Pokój na wynajem w Mokotowie, Metro Racławicka,  11 m²",
+    "price": "1440 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Racławicka 40, Stary Mokotów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-mokotowie-metro-raclawicka-11-m-ID4CzQX"
+  },
+  {
+    "title": "Pokoj 11 m, Stary Mokotow",
+    "price": "1770 zł160,91 zł/m²",
+    "locationDate": "ul. Giordana Bruna, Stary Mokotów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-11-m-stary-mokotow-ID4Cylu"
+  },
+  {
+    "title": "Pokój Politechnika, SGGW, SGH, Łazarski, UW WZ, Metro, Galeria Mokotów",
+    "price": "1400 zł+ czynsz: 399 zł/miesiąc",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-politechnika-sggw-sgh-lazarski-uw-wz-metro-galeria-mokotow-ID4CwZr"
+  }
+]
