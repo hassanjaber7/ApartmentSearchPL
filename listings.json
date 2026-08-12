@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Pl. Wilsona, przy metrze, tani pokój/mieszkanie dla studenta, ucznia",
+    "price": "1400 zł87,50 zł/m²",
+    "locationDate": "pl. Plac Thomasa Woodrowa Wilsona, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pl-wilsona-przy-metrze-tani-pokoj-mieszkanie-dla-studenta-ucznia-ID4CzDq"
+  },
+  {
+    "title": "Pokój na wynajem w Mokotowie, Metro Racławicka,  11 m²",
+    "price": "1440 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Racławicka 40, Stary Mokotów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-mokotowie-metro-raclawicka-11-m-ID4CzQX"
+  },
+  {
+    "title": "Tani, duży pokój, świetna lokalizacja na Mokotowie",
+    "price": "1539 zł+ czynsz: 80 zł/miesiąc",
+    "locationDate": "ul. Etiudy Rewolucyjnej, Wyględów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/tani-duzy-pokoj-swietna-lokalizacja-na-mokotowie-ID4ABkx"
+  },
+  {
+    "title": "room for rent / pokój 300 metrów do metra Imielin",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Edwarda Warchałowskiego, Ursynów-Centrum, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/room-for-rent-pokoj-300-metrow-do-metra-imielin-ID474Aa"
+  }
+]
