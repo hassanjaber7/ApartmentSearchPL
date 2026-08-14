@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój w wysokim standardzie - Mokotów",
+    "price": "1490 zł+ czynsz: 460 zł/miesiąc",
+    "locationDate": "ul. Racjonalizacji, Służewiec, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-wysokim-standardzie-mokotow-ID4CD5u"
+  },
+  {
+    "title": "Nowy pokój 14m² na ogrodzonym osiedlu. Metro Kondratowicza.",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Kowalskiego, Bródno-Podgrodzie, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowy-pokoj-14m-na-ogrodzonym-osiedlu-metro-kondratowicza-ID4z49e"
+  },
+  {
+    "title": "1-osobowy pokój Żoliborz blisko Placu Wilsona / metro",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/1-osobowy-pokoj-zoliborz-blisko-placu-wilsona-metro-ID4albi"
+  }
+]
