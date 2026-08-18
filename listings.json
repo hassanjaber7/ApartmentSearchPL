@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Przestronny pokój 10m2 – 3 min Metro Ratusz Śródmieście EN UKR",
+    "price": "1500 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Śródmieście Północne, Śródmieście, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/przestronny-pokoj-10m2-3-min-metro-ratusz-srodmiescie-en-ukr-ID4CEUt"
+  },
+  {
+    "title": "Pokój na wynajem w Warszawie",
+    "price": "1900 zł",
+    "locationDate": "ul. Meander, Natolin, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-warszawie-ID4CEvk"
+  },
+  {
+    "title": "Wynajmę pokój - prawie Ochota + opcjonalnie stanowisko parkingowe",
+    "price": "1650 zł+ czynsz: 330 zł/miesiąc",
+    "locationDate": "ul. Instalatorów, Raków, Włochy, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/wynajme-pokoj-prawie-ochota-opcjonalnie-stanowisko-parkingowe-ID4vChp"
+  }
+]
