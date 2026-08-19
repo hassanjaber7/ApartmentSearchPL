@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Metro Płocka, pokój jednoosobowy, od zaraz",
+    "price": "1550 zł+ czynsz: 500 zł/miesiąc",
+    "locationDate": "Wolska, Czyste, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/metro-plocka-pokoj-jednoosobowy-od-zaraz-ID4CuMm"
+  },
+  {
+    "title": "Pokój w bardzo dobrej lokalizacji wolny od 1.09",
+    "price": "1680 zł",
+    "locationDate": "ul. Dymińska, Stary Żoliborz, Żoliborz, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-bardzo-dobrej-lokalizacji-wolny-od-1-09-ID4CpIF"
+  },
+  {
+    "title": "Nowy pokój 14m² na ogrodzonym osiedlu. Metro Kondratowicza.",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Kowalskiego, Bródno-Podgrodzie, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowy-pokoj-14m-na-ogrodzonym-osiedlu-metro-kondratowicza-ID4z49e"
+  }
+]
