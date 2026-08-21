@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój 1os Wola/Śródmieście-Jana Pawła/Arkadia | Bez Prowizji [EN][UKR]",
+    "price": "1450 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Mordechaja Anielewicza, Nowolipki, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1os-wola-srodmiescie-jana-pawla-arkadia-bez-prowizji-enukr-ID4CItp"
+  },
+  {
+    "title": "Pokój Politechnika, SGGW, SGH, Łazarski, UW WZ, Galeria Mokotów, Metro",
+    "price": "1400 zł+ czynsz: 399 zł/miesiąc",
+    "locationDate": "Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-politechnika-sggw-sgh-lazarski-uw-wz-galeria-mokotow-metro-ID4CC9T"
+  },
+  {
+    "title": "Pokój na wynajem w Bemowie z pełnym wyposażeniem",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Górce, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-bemowie-z-pelnym-wyposazeniem-ID4stue"
+  }
+]
