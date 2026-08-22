@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Nowy pokój 14m² na ogrodzonym osiedlu. Metro Kondratowicza.",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Kowalskiego, Bródno-Podgrodzie, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowy-pokoj-14m-na-ogrodzonym-osiedlu-metro-kondratowicza-ID4z49e"
+  },
+  {
+    "title": "Pokój na wynajem w Bemowie z pełnym wyposażeniem",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Górce, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-w-bemowie-z-pelnym-wyposazeniem-ID4stue"
+  },
+  {
+    "title": "Pokój w apartamentowcu, 2 łazienki MORDOR recepcja patio park linearny",
+    "price": "1500 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Konstruktorska 9, Służewiec, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-apartamentowcu-2-lazienki-mordor-recepcja-patio-park-linearny-ID3MhF2"
+  }
+]
