@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Duży pokój z balkonem tuż przy SGGW",
+    "price": "1600 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Arkadowa, Stary Służew, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/duzy-pokoj-z-balkonem-tuz-przy-sggw-ID4CHcw"
+  },
+  {
+    "title": "Centrum Powiśle ul Dobra duży pokój For rent",
+    "price": "1900 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Dobra, Powiśle, Śródmieście, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/centrum-powisle-ul-dobra-duzy-pokoj-for-rent-ID4mTTw"
+  },
+  {
+    "title": "Pokój w apartamentowcu, 2 łazienki MORDOR recepcja patio park linearny",
+    "price": "1500 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Konstruktorska 9, Służewiec, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-apartamentowcu-2-lazienki-mordor-recepcja-patio-park-linearny-ID3MhF2"
+  },
+  {
+    "title": "Room near Metro Wilanowska | Looking for a Flatmate (M/F 25+)",
+    "price": "1550 zł+ czynsz: 350 zł/miesiąc",
+    "locationDate": "Ksawerów, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/room-near-metro-wilanowska-looking-for-a-flatmate-m-f-25-ID4CN0t"
+  }
+]
