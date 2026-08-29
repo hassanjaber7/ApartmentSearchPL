@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "title": "Wynajmę ul. Zamojska 35",
+    "price": "1 700 złdo negocjacji",
+    "locationDate": "Garwolin - Dzisiaj o 07:35",
+    "link": "https://www.olx.pl/d/oferta/wynajme-ul-zamojska-35-CID3-ID1c58Ju.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Wynajem kawalerki",
+    "price": "1 600 zł",
+    "locationDate": "Wilków Drugi - Odświeżono dzisiaj o 06:26",
+    "link": "https://www.olx.pl/d/oferta/wynajem-kawalerki-CID3-ID1c2NVY.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój dla dziewczyny- od września na Pradze Południe",
+    "price": "1 400 zł",
+    "locationDate": "Warszawa, Praga-Południe - Dzisiaj o 06:04",
+    "link": "https://www.olx.pl/d/oferta/pokoj-dla-dziewczyny-od-wrzesnia-na-pradze-poludnie-CID3-ID1bZa7j.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Ładny pokój dla osoby studiującej lub pracującej,  Grzybowska 9,  kilka minut pieszo do metra ONZ i Świętokrzyska",
+    "price": "1 800 złdo negocjacji",
+    "locationDate": "Warszawa, Śródmieście - Odświeżono dzisiaj o 08:46",
+    "link": "https://www.olx.pl/d/oferta/ladny-pokoj-dla-osoby-studiujacej-lub-pracujacej-grzybowska-9-kilka-minut-pieszo-do-metra-onz-i-swietokrzyska-CID3-ID1bJbKn.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 9,1 m² | Wilcza 69, Śródmieście | BEZ PROWIZJI | od 26.09 | 18",
+    "price": "1 550 zł",
+    "locationDate": "Warszawa, Śródmieście - Dzisiaj o 06:36",
+    "link": "https://www.olx.pl/d/oferta/pokoj-9-1-m-wilcza-69-srodmiescie-bez-prowizji-od-26-09-18-CID3-ID1bEmJ0.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokoj z balkonem od września ul. Śródziemnomorska Mokotów VISTULA SGGW",
+    "price": "1700 zł+ czynsz: 0 zł/miesiąc",
+    "locationDate": "ul. Śródziemnomorska, Stegny, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-z-balkonem-od-wrzesnia-ul-srodziemnomorska-mokotow-vistula-sggw-ID4CIQQ"
+  },
+  {
+    "title": "Pokój jednoosobowy Racławicka 156/ single room",
+    "price": "1500 zł+ czynsz: 385 zł/miesiąc",
+    "locationDate": "ul. Racławicka, Rakowiec, Ochota, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-jednoosobowy-raclawicka-156-single-room-ID4CIyk"
+  },
+  {
+    "title": "Pokój 1os Wola/Śródmieście-Jana Pawła/Arkadia | Bez Prowizji [EN][UKR]",
+    "price": "1450 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Mordechaja Anielewicza, Nowolipki, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1os-wola-srodmiescie-jana-pawla-arkadia-bez-prowizji-enukr-ID4CItp"
+  },
+  {
+    "title": "Pokój 1 Osobowy,Bemowo,ul. Czumy,Metro,Zieleń",
+    "price": "1600 zł+ czynsz: 200 zł/miesiąc",
+    "locationDate": "ul. gen. Waleriana Czumy, Jelonki Północne, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1-osobowy-bemowo-ul-czumy-metro-zielen-ID4CPRO"
+  }
+]
