@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Pokój do wynajęcia-Mieszkanie 3 pok 62m2 Jagiellońska 1  ,centrum",
+    "price": "1 750 zł",
+    "locationDate": "Warszawa, Praga-Północ - Odświeżono dzisiaj o 03:24",
+    "link": "https://www.olx.pl/d/oferta/pokoj-do-wynajecia-mieszkanie-3-pok-62m2-jagiellonska-1-centrum-CID3-ID1bv1Ks.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 12m2, topowa lokalizacja, rondo Daszyńskiego",
+    "price": "2 200 zł",
+    "locationDate": "Warszawa, Wola - Dzisiaj o 06:36",
+    "link": "https://www.olx.pl/d/oferta/pokoj-12m2-topowa-lokalizacja-rondo-daszynskiego-CID3-ID1c5QFl.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Nowy pokój 14m² na ogrodzonym osiedlu. Metro Kondratowicza.",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Kowalskiego, Bródno-Podgrodzie, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowy-pokoj-14m-na-ogrodzonym-osiedlu-metro-kondratowicza-ID4z49e"
+  },
+  {
+    "title": "Pokój Mokotów przy metro Racławicka SGH WUM (TYLKO 3 POKOJE)",
+    "price": "1610 zł+ czynsz: 390 zł/miesiąc",
+    "locationDate": "al. Aleja Niepodległości, Wierzbno, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-mokotow-przy-metro-raclawicka-sgh-wum-tylko-3-pokoje-ID4sjw9"
+  }
+]
