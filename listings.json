@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Kawalerka Włochy - Okęcie",
+    "price": "1 900 zł",
+    "locationDate": "Warszawa, Włochy - Dzisiaj o 07:01",
+    "link": "https://www.olx.pl/d/oferta/kawalerka-wlochy-okecie-CID3-ID1b8DhP.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Kawalerka 24 m2 - łazienka / internet / Łomianki Dąbrowa",
+    "price": "1 890 zł",
+    "locationDate": "Łomianki - Odświeżono dzisiaj o 06:38",
+    "link": "https://www.olx.pl/d/oferta/kawalerka-24-m2-lazienka-internet-lomianki-dabrowa-CID3-ID1c2WUs.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Wynajem kawalerki",
+    "price": "1 600 zł",
+    "locationDate": "Wilków Drugi - Odświeżono dzisiaj o 06:26",
+    "link": "https://www.olx.pl/d/oferta/wynajem-kawalerki-CID3-ID1c2NVY.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Centrum Śródmieście Jana Pawła II 38 cichy pokój 1-os. od zaraz",
+    "price": "1 850 zł",
+    "locationDate": "Warszawa, Śródmieście - Odświeżono dzisiaj o 06:20",
+    "link": "https://www.olx.pl/d/oferta/centrum-srodmiescie-jana-pawla-ii-38-cichy-pokoj-1-os-od-zaraz-CID3-ID18CAUv.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "1 os i 2os Pokoj dla studenta / single and double room for student close  SGGW",
+    "price": "1 400 zł",
+    "locationDate": "Warszawa, Mokotów - Odświeżono dzisiaj o 04:14",
+    "link": "https://www.olx.pl/d/oferta/1-os-i-2os-pokoj-dla-studenta-single-and-double-room-for-student-close-sggw-CID3-ID1bzFFm.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój do wynajęcia od zaraz w 60m mieszkaniu Tarchomin - Białołęka",
+    "price": "1500 zł+ czynsz: 600 zł/miesiąc",
+    "locationDate": "ul. Strumykowa, Nowodwory, Białołęka, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-do-wynajecia-od-zaraz-w-60m-mieszkaniu-tarchomin-bialoleka-ID4xHxH"
+  },
+  {
+    "title": "Pokój Mokotów przy metro Racławicka SGH WUM (TYLKO 3 POKOJE)",
+    "price": "1610 zł+ czynsz: 390 zł/miesiąc",
+    "locationDate": "al. Aleja Niepodległości, Wierzbno, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-mokotow-przy-metro-raclawicka-sgh-wum-tylko-3-pokoje-ID4sjw9"
+  }
+]
