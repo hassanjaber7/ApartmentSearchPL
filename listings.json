@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Mieszkanie typu studio",
+    "price": "2 100 zł",
+    "locationDate": "Warszawa, Śródmieście - Dzisiaj o 06:38",
+    "link": "https://www.olx.pl/d/oferta/mieszkanie-typu-studio-CID3-ID1c7KAh.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Kawalerka Warszawa Ursus Centrum",
+    "price": "1 650 zł",
+    "locationDate": "Warszawa, Ursus - Dzisiaj o 06:36",
+    "link": "https://www.olx.pl/d/oferta/kawalerka-warszawa-ursus-centrum-CID3-ID1c7Ksx.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Wynajem pokój Wlochy bez kaucij",
+    "price": "2 200 zł",
+    "locationDate": "Warszawa, Włochy - Dzisiaj o 06:05",
+    "link": "https://www.olx.pl/d/oferta/wynajem-pokoj-wlochy-bez-kaucij-CID3-ID1c7JKp.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 15 m2 w mieszkaniu 3 pokojowym Warszawa Włochy, ul.Czereśniowa",
+    "price": "1 700 zł",
+    "locationDate": "Warszawa, Włochy - Odświeżono dzisiaj o 06:01",
+    "link": "https://www.olx.pl/d/oferta/pokoj-15-m2-w-mieszkaniu-3-pokojowym-warszawa-wlochy-ul-czeresniowa-CID3-ID1c0VRc.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Bezpośrednio od właściciela  bezczynszowy Bungalow całoroczny. Białołęka/Stanisławów Pierwszy",
+    "price": "1 800 zł",
+    "locationDate": "Warszawa, Białołęka - Dzisiaj o 05:55",
+    "link": "https://www.olx.pl/d/oferta/bezposrednio-od-wlasciciela-bezczynszowy-bungalow-caloroczny-bialoleka-stanislawow-pierwszy-CID3-ID1aC2wu.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Samo centrum, Metro ONZ",
+    "price": "1800 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Prosta, Mirów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/samo-centrum-metro-onz-ID4CRBk"
+  },
+  {
+    "title": "pokój na Sadybie dla 1-2 osób",
+    "price": "1500 zł100 zł/m²",
+    "locationDate": "ul. Jana III Sobieskiego, Sadyba, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-sadybie-dla-1-2-osob-ID4COIK"
+  }
+]
