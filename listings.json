@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "title": "Kawalerka do wynajęcia",
+    "price": "1 800 zł",
+    "locationDate": "Ząbki - Dzisiaj o 06:08",
+    "link": "https://www.olx.pl/d/oferta/kawalerka-do-wynajecia-CID3-ID1c8Js9.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "!!! Łomianki, kawalerka 25m2",
+    "price": "1 650 zł",
+    "locationDate": "Łomianki - Dzisiaj o 05:38",
+    "link": "https://www.olx.pl/d/oferta/lomianki-kawalerka-25m2-CID3-ID1c8IV5.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 1 os. 20 m2 Ursynów/Kabaty, Pod Strzechą 5",
+    "price": "1 800 złdo negocjacji",
+    "locationDate": "Warszawa, Ursynów - Odświeżono dzisiaj o 04:46",
+    "link": "https://www.olx.pl/d/oferta/pokoj-1-os-20-m2-ursynow-kabaty-pod-strzecha-5-CID3-ID1808Ch.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 1 os. 12 m2 Ursynów/Kabaty ul. Ekologiczna",
+    "price": "1 700 zł",
+    "locationDate": "Warszawa, Ursynów - Odświeżono dzisiaj o 04:45",
+    "link": "https://www.olx.pl/d/oferta/pokoj-1-os-12-m2-ursynow-kabaty-ul-ekologiczna-CID3-ID18WhNi.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "1 os i 2os Pokoj dla studenta / single and double room for student close  SGGW",
+    "price": "1 400 zł",
+    "locationDate": "Warszawa, Mokotów - Odświeżono dzisiaj o 04:14",
+    "link": "https://www.olx.pl/d/oferta/1-os-i-2os-pokoj-dla-studenta-single-and-double-room-for-student-close-sggw-CID3-ID1bzFFm.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Łomianki, kawalerka 25m2",
+    "price": "1650 zł66 zł/m²",
+    "locationDate": "Krzysztofa Kamila Baczyńskiego, Łomianki, Łomianki, warszawski zachodni, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/lomianki-kawalerka-25m2-ID4CSMG"
+  },
+  {
+    "title": "Pokój / mieszkanie 50 m² przy metrze praktycznie na wyłączność",
+    "price": "1400 zł+ czynsz: 450 zł/miesiąc",
+    "locationDate": "ul. Wąwozowa, Kabaty, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-mieszkanie-50-m-przy-metrze-praktycznie-na-wylacznosc-ID4CRua"
+  },
+  {
+    "title": "Nowoczesny POKÓJ - Mokotów - ROOM FOR RENT",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Cybernetyki, Służewiec, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowoczesny-pokoj-mokotow-room-for-rent-ID4Cx89"
+  }
+]
