@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój, Warszawa, ul. Goławicka",
+    "price": "1500 zł+ czynsz: 100 zł/miesiąc",
+    "locationDate": "ul. Goławicka, Targówek Mieszkaniowy, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-warszawa-ul-golawicka-ID4CSZ3"
+  },
+  {
+    "title": "Pokój przy Metro Wawrzyszew - Wrzeciono 10",
+    "price": "1400 zł+ czynsz: 450 zł/miesiąc",
+    "locationDate": "ul. Wrzeciono, Wrzeciono, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-przy-metro-wawrzyszew-wrzeciono-10-ID4CROg"
+  },
+  {
+    "title": "Nowy pokój 14m² na ogrodzonym osiedlu. Metro Kondratowicza.",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Aleksandra Kowalskiego, Bródno-Podgrodzie, Targówek, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/nowy-pokoj-14m-na-ogrodzonym-osiedlu-metro-kondratowicza-ID4z49e"
+  }
+]
