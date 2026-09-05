@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Wynajem pokój Wlochy bez kaucij",
+    "price": "2 100 zł",
+    "locationDate": "Warszawa, Włochy - Odświeżono dzisiaj o 06:05",
+    "link": "https://www.olx.pl/d/oferta/wynajem-pokoj-wlochy-bez-kaucij-CID3-ID1c7JKp.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Mikro kawalerka   scandi styl",
+    "price": "1 999 zł",
+    "locationDate": "Milanówek - Odświeżono dzisiaj o 05:12",
+    "link": "https://www.olx.pl/d/oferta/mikro-kawalerka-scandi-styl-CID3-ID192N60.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój Ursynów Comfortable room with wardrobe IMIELIN METRO STATION",
+    "price": "1 950 zł",
+    "locationDate": "Warszawa, Ursynów - Odświeżono dzisiaj o 05:58",
+    "link": "https://www.olx.pl/d/oferta/pokoj-ursynow-comfortable-room-with-wardrobe-imielin-metro-station-CID3-ID19TpUh.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój do wynajęcia / Room available for rent",
+    "price": "1 650 zł",
+    "locationDate": "Warszawa, Mokotów - Dzisiaj o 00:57",
+    "link": "https://www.olx.pl/d/oferta/pokoj-do-wynajecia-room-available-for-rent-CID3-ID1cbCho.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 18m2 - Ursynów - Metro Natolin",
+    "price": "1800 zł100 zł/m²",
+    "locationDate": "ul. Belgradzka, Natolin, Ursynów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-18m2-ursynow-metro-natolin-ID4CWKJ"
+  },
+  {
+    "title": "Pokój do wynajęcia w centrum, Warszaw",
+    "price": "1800 zł180 zł/m²",
+    "locationDate": "Nowolipki, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-do-wynajecia-w-centrum-warszaw-ID4CRwR"
+  },
+  {
+    "title": "Pokoje dla studentów",
+    "price": "1750 zł+ czynsz: 275 zł/miesiąc",
+    "locationDate": "ul. Radiowa, Boernerowo, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoje-dla-studentow-ID4xXPV"
+  }
+]
