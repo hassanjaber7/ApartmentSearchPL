@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "title": "Wynajem pokój Wlochy bez kaucij",
+    "price": "2 100 zł",
+    "locationDate": "Warszawa, Włochy - Odświeżono dzisiaj o 06:05",
+    "link": "https://www.olx.pl/d/oferta/wynajem-pokoj-wlochy-bez-kaucij-CID3-ID1c7JKp.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "wynajem samodzielnego  pokoju z własną łazienką obok stacji  Metro Politechnika",
+    "price": "1 750 zł",
+    "locationDate": "Warszawa, Śródmieście - Odświeżono dzisiaj o 06:01",
+    "link": "https://www.olx.pl/d/oferta/wynajem-samodzielnego-pokoju-z-wlasna-lazienka-obok-stacji-metro-politechnika-CID3-ID1bucrX.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Wynajmę kawalerkę",
+    "price": "1 800 zł",
+    "locationDate": "Warszawa, Wawer - Dzisiaj o 05:52",
+    "link": "https://www.olx.pl/d/oferta/wynajme-kawalerke-CID3-ID1cdhwT.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój Ursynów Comfortable room with wardrobe IMIELIN METRO STATION",
+    "price": "1 950 zł",
+    "locationDate": "Warszawa, Ursynów - Odświeżono dzisiaj o 05:58",
+    "link": "https://www.olx.pl/d/oferta/pokoj-ursynow-comfortable-room-with-wardrobe-imielin-metro-station-CID3-ID19TpUh.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Duzy 2os Pokoj dla studenta / big double room for student close  SGGW",
+    "price": "1 800 zł",
+    "locationDate": "Warszawa, Mokotów - Odświeżono dzisiaj o 04:14",
+    "link": "https://www.olx.pl/d/oferta/duzy-2os-pokoj-dla-studenta-big-double-room-for-student-close-sggw-CID3-ID1bzFFm.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "MOKOTÓW!!! NOWOCZESNY POKÓJ - METRO SŁUŻEW - ULICA BLACHARSKA",
+    "price": "1450 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Blacharska 1, Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/mokotow-nowoczesny-pokoj-metro-sluzew-ulica-blacharska-ID4CwFN"
+  },
+  {
+    "title": "Pokój do wynajęcia od zaraz w 60m mieszkaniu Tarchomin - Białołęka",
+    "price": "1500 zł+ czynsz: 500 zł/miesiąc",
+    "locationDate": "ul. Strumykowa, Nowodwory, Białołęka, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-do-wynajecia-od-zaraz-w-60m-mieszkaniu-tarchomin-bialoleka-ID4xHxH"
+  }
+]
