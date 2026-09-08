@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Pokój 1-osobowy | Wola | Metro Płocka | Kasprzaka 90 | BEZ PROWIZJI",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Marcina Kasprzaka, Czyste, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1-osobowy-wola-metro-plocka-kasprzaka-90-bez-prowizji-ID4CxTn"
+  },
+  {
+    "title": "Pokój blisko SWPS, Politechnika, UW, Promenada, 3 pokoje!",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Grochów, Praga-Południe, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-blisko-swps-politechnika-uw-promenada-3-pokoje-ID4hPJU"
+  },
+  {
+    "title": "Pokój 1 os. ul. Orzycka 8",
+    "price": "1500 zł",
+    "locationDate": "ul. Orzycka, Służew, Mokotów, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1-os-ul-orzycka-8-ID4CYiW"
+  }
+]
