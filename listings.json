@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "title": "Pokoj do wynajecia w mieszkaniu 3-osobowym od października",
+    "price": "1 250 zł",
+    "locationDate": "Warszawa, Targówek - Dzisiaj o 05:58",
+    "link": "https://www.olx.pl/d/oferta/pokoj-do-wynajecia-w-mieszkaniu-3-osobowym-od-pazdziernika-CID3-ID1cffeC.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Nowoczesne studio przy tężni ul.  Kraszewskiego 7a",
+    "price": "1 500 zł",
+    "locationDate": "Konstancin-Jeziorna - Dzisiaj o 05:34",
+    "link": "https://www.olx.pl/d/oferta/nowoczesne-studio-przy-tezni-ul-kraszewskiego-7a-CID3-ID1b3KjN.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Pokój 1-osobowy | Wola | Metro Płocka | Kasprzaka 90 | BEZ PROWIZJI",
+    "price": "1400 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Marcina Kasprzaka, Czyste, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1-osobowy-wola-metro-plocka-kasprzaka-90-bez-prowizji-ID4CxTn"
+  },
+  {
+    "title": "Pokój 1-2os, Mieszkanie 3pokojowe, Metro 50metrów, od 1 października",
+    "price": "1400 zł",
+    "locationDate": "ul. Stefana Żeromskiego, Słodowiec, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-1-2os-mieszkanie-3pokojowe-metro-50metrow-od-1-pazdziernika-ID4CxN6"
+  },
+  {
+    "title": "Pokój blisko SWPS, Politechnika, UW, Promenada, 3 pokoje!",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Grochów, Praga-Południe, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-blisko-swps-politechnika-uw-promenada-3-pokoje-ID4hPJU"
+  },
+  {
+    "title": "Pokój na wynajem dla studentki na Woli",
+    "price": "1500 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Ulrychów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-na-wynajem-dla-studentki-na-woli-ID4CZwq"
+  }
+]
