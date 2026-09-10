@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Wynajmę mieszkanie Wyszków, Zakolejowa 1A",
+    "price": "1 600 zł",
+    "locationDate": "Wyszków - Dzisiaj o 04:26",
+    "link": "https://www.olx.pl/d/oferta/wynajme-mieszkanie-wyszkow-zakolejowa-1a-CID3-ID1cgduc.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "PIĘKNY POKÓJ | BIELANY | METRO MŁOCINY | UKSW | AWF | UW | VIZJA",
+    "price": "1600 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Wojciecha Bogusławskiego, Chomiczówka, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/piekny-pokoj-bielany-metro-mlociny-uksw-awf-uw-vizja-ID4CJmo"
+  },
+  {
+    "title": "PIĘKNY POKÓJ | METRO BEMOWO | WAT | WWSB | VIZJA | SIŁOWNIA W POBLIŻU",
+    "price": "1450 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Secemińska, Bemowo-Lotnisko, Bemowo, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/piekny-pokoj-metro-bemowo-wat-wwsb-vizja-silownia-w-poblizu-ID4CIBH"
+  },
+  {
+    "title": "Pokój w pięknym przytulnym nowym mieszkaniu",
+    "price": "1400 zł116,67 zł/m²",
+    "locationDate": "Żerań, Białołęka, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-w-pieknym-przytulnym-nowym-mieszkaniu-ID4D0zj"
+  }
+]
