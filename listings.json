@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "title": "Wynajmę mieszkanie",
+    "price": "1 900 zł",
+    "locationDate": "Pułtusk - Dzisiaj o 04:58",
+    "link": "https://www.olx.pl/d/oferta/wynajme-mieszkanie-CID3-ID1aWDwi.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Big Single Room Duży Pokój 1-os. 14m2 Mokotów Metro Racławicka",
+    "price": "1 850 zł",
+    "locationDate": "Warszawa, Mokotów - Odświeżono dzisiaj o 06:30",
+    "link": "https://www.olx.pl/d/oferta/big-single-room-duzy-pokoj-1-os-14m2-mokotow-metro-raclawicka-CID3-ID15qOtf.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Nowoczesny pokój do wynajęcia (M4) Ochota/Raków.",
+    "price": "1 400 zł",
+    "locationDate": "Warszawa, Ochota - Odświeżono dzisiaj o 04:45",
+    "link": "https://www.olx.pl/d/oferta/nowoczesny-pokoj-do-wynajecia-m4-ochota-rakow-CID3-ID19zK5g.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "SŁONECZNY POKÓJ | BIELANY | METRO MŁOCINY | UKSW | AWF | UW | VIZJA",
+    "price": "1690 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Wojciecha Bogusławskiego, Chomiczówka, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/sloneczny-pokoj-bielany-metro-mlociny-uksw-awf-uw-vizja-ID4CJmG"
+  },
+  {
+    "title": "PIĘKNY POKÓJ | BIELANY | METRO MŁOCINY | UKSW | AWF | UW | VIZJA",
+    "price": "1600 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Wojciecha Bogusławskiego, Chomiczówka, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/piekny-pokoj-bielany-metro-mlociny-uksw-awf-uw-vizja-ID4CJmo"
+  },
+  {
+    "title": "Pokój przy rondzie ONZ, Centrum, pok. nr 2",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Waliców, Mirów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-przy-rondzie-onz-centrum-pok-nr-2-ID4CGk1"
+  }
+]
