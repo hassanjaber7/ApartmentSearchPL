@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "title": "Samo centrum, Metro ONZ",
+    "price": "1800 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "ul. Prosta, Mirów, Wola, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/samo-centrum-metro-onz-ID4CRBk"
+  },
+  {
+    "title": "SŁONECZNY POKÓJ | BIELANY | METRO MŁOCINY | UKSW | AWF | UW | VIZJA",
+    "price": "1690 zł+ czynsz: 300 zł/miesiąc",
+    "locationDate": "ul. Wojciecha Bogusławskiego, Chomiczówka, Bielany, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/sloneczny-pokoj-bielany-metro-mlociny-uksw-awf-uw-vizja-ID4CJmG"
+  },
+  {
+    "title": "Pokój blisko SWPS, Politechnika, UW, Promenada, 3 pokoje!",
+    "price": "1400 zł+ czynsz: 400 zł/miesiąc",
+    "locationDate": "Grochów, Praga-Południe, Warszawa, mazowieckie",
+    "link": "https://www.otodom.pl/pl/oferta/pokoj-blisko-swps-politechnika-uw-promenada-3-pokoje-ID4hPJU"
+  }
+]
