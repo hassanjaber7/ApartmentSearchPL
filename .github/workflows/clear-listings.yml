@@ -1,8 +1,8 @@
 # This workflow clears the listings.json file daily at midnight and pushes the changes to the repository. It also allows for manual triggering for testing purposes.
 name: Clear Listings Daily
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs at midnight (00:00) every day
+  # schedule:
+  #   - cron: '0 0 * * *'  # Runs at midnight (00:00) every day
   workflow_dispatch:  # Manual trigger for testing
 
 jobs:
